@@ -12,10 +12,10 @@
 
 :website: `mk-project web page <http://www.open-source-projects.net/mk-project/mk-project>`_
 
+.. image:: mk-project_icon.png
+
 Installation of **mk-project**
 ==============================
-
-.. image:: mk-project_icon.png
 
   **mk-project** is a **C**/**C++** project builder providing terminals for using
 
