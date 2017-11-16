@@ -2,6 +2,8 @@
 **mk-project**
 **************
 
+.. image:: mk-project_icon.png
+
 :Author: Eddie Brüggemann
 
 :Contact: mrcyberfighter@gmail.com
@@ -11,8 +13,6 @@
 :version: 2.1
 
 :website: `mk-project web page <http://www.open-source-projects.net/mk-project/mk-project>`_
-
-.. image:: mk-project_icon.png
 
 Installation of **mk-project**
 ==============================
@@ -201,7 +201,7 @@ Launching **mk-project**
 Shortcuts memo
 ==============
 
-No shortcuts are implemented because of conflicting with the :abbr:`T.U.I (Terminal User Interface)` editor.
+No shortcuts are implemented because of conflicting with the T.U.I (Terminal User Interface) editor.
 
 Credits
 =======
