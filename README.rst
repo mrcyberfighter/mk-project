@@ -10,12 +10,12 @@
 
 :version: 2.1
 
-:website: <http://www.open-source-projects.net/mk-project/mk-project_presentation.html>
+:website: `mk-project web page <http://www.open-source-projects.net/mk-project/mk-project>`_
 
 Installation of **mk-project**
 ==============================
 
-.. image:: ./mk-project_icon.png
+.. image:: mk-project_icon.png
 
   **mk-project** is a **C**/**C++** project builder providing terminals for using
 
@@ -160,33 +160,33 @@ Launching **mk-project**
 
     * Generate a new project.
 
-      :menuselection:`Projects --> New project -> New project`
+      ``Projects --> New project -> New project``
    
-      :menuselection:`Projects --> New project -> From profile`
+      ``Projects --> New project -> From profile``
  
     * Reconfigure a project.
 
-      :menuselection:`Projects --> Reconfigure project`
+      ``Projects --> Reconfigure project``
  
     * Extract and load project.
 
-      :menuselection:`Projects --> Extract and load project`
+      ``Projects --> Extract and load project``
 
     * Add files to the project.
 
-      :menuselection:`Projects --> Add file(s) to project`
+      ``Projects --> Add file(s) to project``
 
     * Load a project.
 
-      :menuselection:`Projects --> Load project`
+      ``Projects --> Load project``
 
   2. The ``Terminals`` item which is done for switching between the 2 sort of terminals:
 
-    * The **make** terminal :menuselection:`Terminals -> make terminal`
+    * The **make** terminal ``Terminals -> make terminal``
 
       Which output the **make** targets every time you launch one through the G.U.I.
 
-    * The **edit** terminal :menuselection:`Terminals -> edit terminal` is suppose for :program:`ed`, :program:`vi`, :program:`emacs`, etc users.
+    * The **edit** terminal ``Terminals -> edit terminal`` is suppose for **ed**, **vi**, **emacs**, etc users.
 
       You can add and remove as many tabs as you want to this, so that you can
 
