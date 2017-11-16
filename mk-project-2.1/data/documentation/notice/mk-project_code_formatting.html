@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mk-project code formatters &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mk-project contributing advices" href="mk-project_participating.html" />
+    <link rel="prev" title="mk-project code investigating, debugging and disassembling" href="mk-project_debugging.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_participating.html" title="mk-project contributing advices"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_debugging.html" title="mk-project code investigating, debugging and disassembling"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mk-project-code-formatters">
+<span id="code-formatters"></span><h1><strong>mk-project</strong> code formatters<a class="headerlink" href="#mk-project-code-formatters" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong>mk-project</strong> provide severals utilities with many predefined targets for formatting your source code.</p>
+<div class="section" id="for-c-or-c-source-code">
+<h3>For <strong>C</strong> or <strong>C++</strong> source code:<a class="headerlink" href="#for-c-or-c-source-code" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong class="program">indent</strong></li>
+<li><strong class="program">astyle</strong></li>
+<li><strong class="program">bcpp</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="using-the-indent-utility">
+<h2>Using the <code class="docutils literal"><span class="pre">indent</span></code> utility<a class="headerlink" href="#using-the-indent-utility" title="Permalink to this headline">¶</a></h2>
+<p><strong>mk-project</strong> provide following predefined indent styles:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make indent-kr    <span class="c1"># Format all source files in the kr style.</span>
+make indent-gnu   <span class="c1"># Format all source files in the gnu style.</span>
+make indent-linux <span class="c1"># Format all source files in the linux style.</span>
+make indent-orig  <span class="c1"># Format all source files in the original style.</span>
+make indent-user  <span class="c1"># Format all source files in the user defined style.</span>
+
+make indent-clean <span class="c1"># Remove all formatted files with suffix.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">The <code class="docutils literal"><span class="pre">indent-user</span></code> target use the given options during the project configuration for formatting your source code.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By launching any code formatting target <strong>mk-project</strong> will output a copy of all your source files suffixed with the corresponding target name:</p>
+<p>Per example by using the <code class="docutils literal"><span class="pre">indent-kr</span></code> target a file named <code class="file docutils literal"><span class="pre">main.c</span></code> will ouput as <code class="file docutils literal"><span class="pre">main-kr.c</span></code>.</p>
+<p>For overwriting your source files really you must set the <strong class="program">make</strong> variable <strong class="makevar">OVERWRITE</strong> on the value <strong>T</strong>.</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make indent-kr <span class="nv">OVERWRITE</span><span class="o">=</span>T
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-the-astyle-utility">
+<h2>Using the <code class="docutils literal"><span class="pre">astyle</span></code> utility<a class="headerlink" href="#using-the-astyle-utility" title="Permalink to this headline">¶</a></h2>
+<p><strong>mk-project</strong> provide following predefined indent styles:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make astyle-ansi          <span class="c1"># Format all source files in the ansi style.</span>
+make astyle-java          <span class="c1"># Format all source files in the java style.</span>
+make astyle-kr            <span class="c1"># Format all source files in the kr style.</span>
+make astyle-stroustrup    <span class="c1"># Format all source files in the stroustrup style.</span>
+make astyle-whitesmith    <span class="c1"># Format all source files in the whitesmith style.</span>
+make astyle-banner        <span class="c1"># Format all source files in the banner style.</span>
+make astyle-gnu           <span class="c1"># Format all source files in the gnu style.</span>
+make astyle-linux         <span class="c1"># Format all source files in the linux style.</span>
+make astyle-horstmann     <span class="c1"># Format all source files in the horstmann style.</span>
+make astyle-lisp          <span class="c1"># Format all source files in the lisp style.</span>
+make astyle-pico          <span class="c1"># Format all source files in the pico style.</span>
+make astyle-python        <span class="c1"># Format all source files in the python style.</span>
+make astyle-user          <span class="c1"># Format all source files in the user defined style.</span>
+
+make astyle-clean         <span class="c1"># Remove all formatted files with suffix.</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">The <code class="docutils literal"><span class="pre">astyle-user</span></code> target use the given options during the project configuration for formatting your source code.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By launching any code formatting target <strong>mk-project</strong> will output a copy of all your source files suffixed with the corresponding target name:</p>
+<p>Per example by using the <code class="docutils literal"><span class="pre">astyle-kr</span></code> target a file named <code class="file docutils literal"><span class="pre">main.c</span></code> will ouput as <code class="file docutils literal"><span class="pre">main-kr.c</span></code>.</p>
+<p>For overwriting your source files really you must set the <strong class="program">make</strong> variable <strong class="makevar">OVERWRITE</strong> on the value <strong>T</strong>.</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make astyle-kr <span class="nv">OVERWRITE</span><span class="o">=</span>T
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>mk-project</strong> code formatters</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#for-c-or-c-source-code">For <strong>C</strong> or <strong>C++</strong> source code:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-the-indent-utility">Using the <code class="docutils literal"><span class="pre">indent</span></code> utility</a></li>
+<li><a class="reference internal" href="#using-the-astyle-utility">Using the <code class="docutils literal"><span class="pre">astyle</span></code> utility</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_debugging.html"
+                        title="previous chapter"><strong class="program">mk-project</strong> code investigating, debugging and disassembling</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_participating.html"
+                        title="next chapter"><strong class="program">mk-project</strong> contributing advices</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_code_formatting.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_participating.html" title="mk-project contributing advices"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_debugging.html" title="mk-project code investigating, debugging and disassembling"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

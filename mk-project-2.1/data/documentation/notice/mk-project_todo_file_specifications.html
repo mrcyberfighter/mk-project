@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>*.todo or *.tdo file format specifications: &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="About mk-project" href="mk-project_about.html" />
+    <link rel="prev" title="mk-project contributing advices" href="mk-project_participating.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_about.html" title="About mk-project"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_participating.html" title="mk-project contributing advices"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="todo-or-tdo-file-format-specifications">
+<h1><strong>*.todo</strong> or <strong>*.tdo</strong> file format specifications:<a class="headerlink" href="#todo-or-tdo-file-format-specifications" title="Permalink to this headline">¶</a></h1>
+<p>The *.todo specification give you a advice structure</p>
+<p>of how structuring an TODO file for efficiently tasks</p>
+<p>organizing, and so don&#8217;t forget ideas or things which</p>
+<p>you may have to do in the future for the development</p>
+<p>of projects of any professional fields where tasks</p>
+<p>must be organized and be accomplished in an certain</p>
+<p>order.</p>
+<div class="section" id="markup-syntax">
+<h2>Markup syntax<a class="headerlink" href="#markup-syntax" title="Permalink to this headline">¶</a></h2>
+<p><strong>Syntax of a mark:</strong> <code class="docutils literal"><span class="pre">[UPPERCASE</span> <span class="pre">:Capitalize:</span> <span class="pre">&lt;digits&gt;]</span></code></p>
+<p><strong>Syntax of end mark:</strong> <code class="docutils literal"><span class="pre">[/UPPERCASE]</span> <span class="pre">#</span> <span class="pre">The</span> <span class="pre">end</span> <span class="pre">mark</span> <span class="pre">is</span> <span class="pre">good</span> <span class="pre">for</span> <span class="pre">reread</span> <span class="pre">his</span> <span class="pre">todo</span> <span class="pre">note.</span></code></p>
+<p>An entire <strong>*.todo</strong> file entry can be represent like this:</p>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="gh">=================</span>
+<span class="gh">TITLE OF DOCUMENT</span>
+<span class="gh">=================</span>
+
+[TYPE :Priority_level: &lt;TASK_ORDER&gt;] Title of todo entry
+
+  Todo main text...
+
+[/TYPE]
+
+[TYPE :Priority_level: &lt;TASK_ORDER&gt;] One line todo entry [/TYPE]
+</pre></div>
+</div>
+</div>
+<div class="section" id="markup-types">
+<h2>Markup Types<a class="headerlink" href="#markup-types" title="Permalink to this headline">¶</a></h2>
+<p><strong>TYPE</strong> (can be):</p>
+<div class="section" id="before-complete-the-task">
+<h3>Before complete the task:<a class="headerlink" href="#before-complete-the-task" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>BUG</strong> (<em>A bug have to be fixed</em>).</li>
+<li><strong>FIXME</strong> (<em>A problem has to be fixed</em>).</li>
+<li><strong>TEST</strong> (<em>You have to test a feature</em>).</li>
+<li><strong>CORRECT</strong> (<em>Something must be corrected</em>).</li>
+<li><strong>REDO</strong> (<em>Something must be redone</em>).</li>
+<li><strong>COMMENT</strong> (<em>You must make a comment</em>).</li>
+<li><strong>TODO</strong> (<em>Something must be done</em>).</li>
+<li><strong>IDEA</strong> (<em>You get an idea for something</em>).</li>
+</ul>
+</div>
+<div class="section" id="after-complete-the-task">
+<h3>After complete the task:<a class="headerlink" href="#after-complete-the-task" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>BUGFIX</strong> (<em>The bug is fixed</em>).</li>
+<li><strong>FIXED</strong>  (<em>The problem is fixed</em>).</li>
+<li><strong>TESTED</strong> (<em>The test is done</em>).</li>
+<li><strong>CORRECTED</strong>  (<em>The correction is done</em>).</li>
+<li><strong>REDONE</strong> (<em>The task is rewritten</em>).</li>
+<li><strong>COMMENTED</strong> (<em>The commenting is done</em>).</li>
+<li><strong>DONE</strong> (<em>The task TODO is DONE</em>).</li>
+<li><strong>IDIE</strong> (<em>The idea is complete (become true)</em>).</li>
+</ul>
+</div>
+<div class="section" id="summary-of-type">
+<h3>Summary of TYPE<a class="headerlink" href="#summary-of-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>BUG</strong> or <strong>BUGFIX</strong></li>
+<li><strong>FIXME</strong> or <strong>FIXED</strong></li>
+<li><strong>TEST</strong> or <strong>TESTED</strong></li>
+<li><strong>CORRECT</strong> or <strong>CORRECTED</strong></li>
+<li><strong>REDO</strong> or <strong>REDONE</strong></li>
+<li><strong>COMMENT</strong> or <strong>COMMENTED</strong></li>
+<li><strong>TODO</strong> or <strong>DONE</strong></li>
+<li><strong>IDEA</strong> or <strong>IDIE</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="priority-level">
+<h2>Priority_level<a class="headerlink" href="#priority-level" title="Permalink to this headline">¶</a></h2>
+<p><strong>Priority_level</strong> (can take following values:)</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>High</strong></li>
+<li><strong>Medium</strong></li>
+<li><strong>Low</strong></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="task-order">
+<h2>TASK_ORDER<a class="headerlink" href="#task-order" title="Permalink to this headline">¶</a></h2>
+<p><strong>TASK_ORDER</strong> (can be)</p>
+<ol class="arabic simple">
+<li>a <strong>2</strong> (Maybe <em>3</em> or <em>4</em>) digits sequences for organizing.</li>
+<li>a digit and a <strong>UPPERCASE</strong> letter with meaning:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>By <strong>TODO</strong>, <strong>TEST</strong>, <strong>IDEA</strong> entries<ul>
+<li><strong>F</strong> -&gt; <em>Free time</em></li>
+<li><strong>N</strong> -&gt; <em>Normal</em> (When possible)</li>
+<li><strong>U</strong> -&gt; <em>Urgent</em></li>
+</ul>
+</li>
+<li>By <strong>CORRECT</strong>, <strong>BUG</strong> and <strong>FIXME</strong><ul>
+<li><strong>I</strong> -&gt; <em>Info</em></li>
+<li><strong>W</strong> -&gt; <em>Warning</em></li>
+<li><strong>F</strong> -&gt; <em>Fatal</em></li>
+</ul>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">the digit(s) are zero per default but it can take a value
+between 0-9 for very organized structures.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body"><p class="first">This can be omit. Only <strong>TYPE</strong> and <strong>Priority_level</strong> are mandatory.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Summary:</th><td class="field-body"><p class="first">The <strong>TASK_ORDER</strong> are written between <code class="docutils literal"><span class="pre">&lt;</span></code> and <code class="docutils literal"><span class="pre">&gt;</span></code>.</p>
+<p>Can be composed either of:</p>
+<ul class="simple">
+<li><strong>2</strong> digits representing the <em>task priority</em>.</li>
+<li>A digit and a special mean <strong>UPPERCASE</strong> letter.</li>
+</ul>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">syntax:</th><td class="field-body">&lt;[0-9][0-9|[F|N|U]|[I|W|F]]&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">example:</th><td class="field-body">[TODO :Medium: &lt;0F&gt;] Make a new icon because actual is ugly !!! [/TODO]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="advices">
+<h2>Advices<a class="headerlink" href="#advices" title="Permalink to this headline">¶</a></h2>
+<p><strong>*.todo</strong> files extensibility:</p>
+<ol class="arabic simple">
+<li>Every entry <strong>TYPE</strong> can be invented but must be written in <strong>UPPERCASE</strong>.</li>
+</ol>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">advice:</th><td class="field-body">use only one word. (Else use <strong>&#8216;_&#8217;</strong>).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DFY</strong> (<em>Don&#8217;t Forget Yourself: this make sens</em>),</p>
+<p><strong>DRY</strong> (<em>Don&#8217;t Repeat Yourself: don&#8217;t be stupid</em>),</p>
+<p><strong>KISS</strong> (<em>Keep It Simple Stupid: be concise</em>).</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Priority level can be added as long as they are one Capitalize word.</li>
+<li><strong>DIY</strong> (<em>Do It Yourself</em>) for the <strong>TASK_ORDER</strong> or in order to maintain them ordered.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Advice:</th><td class="field-body">Keep terminal width max 79 chars a line.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-rest"><div class="highlight"><pre><span></span>The Best for the End: Think at things like timestamps,
+
+doing order, prerequisite for task, and so soon !!!
+</pre></div>
+</div>
+</div>
+<div class="section" id="syntax-of-todo-file-s-content">
+<h2>Syntax of <strong>*.todo</strong> file(s) content<a class="headerlink" href="#syntax-of-todo-file-s-content" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <code class="docutils literal"><span class="pre">ReST</span></code> or <code class="docutils literal"><span class="pre">Markdown</span></code> syntax for the content between or inside the marks.</p>
+<div class="section" id="for-titles">
+<h3>For Titles<a class="headerlink" href="#for-titles" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="gh">==============</span>
+<span class="gh">My first Title</span>
+<span class="gh">==============</span>
+
+<span class="gh">***************</span>
+<span class="gh">My second title</span>
+<span class="gh">***************</span>
+
+<span class="gh">##############</span>
+<span class="gh">My third title</span>
+<span class="gh">##############</span>
+
+<span class="gh">+++++++++++++++</span>
+<span class="gh">My fourth title</span>
+<span class="gh">+++++++++++++++</span>
+
+<span class="gh">::::::::::::::</span>
+<span class="gh">My fifth title</span>
+<span class="gh">::::::::::::::</span>
+
+<span class="gh">--------------</span>
+<span class="gh">My sixth title</span>
+<span class="gh">--------------</span>
+
+<span class="gh">~~~~~~~~~~~~~~~~</span>
+<span class="gh">My seventh title</span>
+<span class="gh">~~~~~~~~~~~~~~~~</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-text-decorations">
+<h3>For text decorations:<a class="headerlink" href="#for-text-decorations" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="gs">**bold**</span>
+
+<span class="ge">*italic*</span>
+
+_underline_
+
+<span class="s">``inline literals``</span>
+
+--strike-trough--
+
+^^over-line^^
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-lists">
+<h3>For Lists:<a class="headerlink" href="#for-lists" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="m">+</span> List item 1
+
+  <span class="m">-</span> Sub list item 1
+
+  <span class="m">-</span> Sub list item 2
+
+<span class="m">+</span> List item 2
+
+  <span class="m">1.</span> First numbered list item.
+
+  <span class="m">2.</span> Second numbered list item.
+
+  <span class="m">3.</span> Third numbered list item.
+
+<span class="m">+</span> List item 3
+
+  Definition list title
+
+    Definition list text
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-keywords-values-pairing">
+<h3>For keywords values pairing:<a class="headerlink" href="#for-keywords-values-pairing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="nc">:author:</span> <span class="nf">foo bar</span>
+
+<span class="nc">:license:</span> <span class="nf">fdl</span>
+
+<span class="nc">:version:</span> <span class="nf">1.0.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-links">
+<h3>For links:<a class="headerlink" href="#for-links" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="nv">`Link text &lt;http://www.domain.com/folder/file.html&gt;`</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-footnotes">
+<h3>For footnotes:<a class="headerlink" href="#for-footnotes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span>[*] my footnote text
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-comments">
+<h3>For comments:<a class="headerlink" href="#for-comments" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span># My comment line
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-code-text">
+<h3>For code text:<a class="headerlink" href="#for-code-text" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-rest"><div class="highlight"><pre><span></span>[:LANGUAGE:]
+
+  Indented text is code !
+</pre></div>
+</div>
+<p>Per example for C code:</p>
+<div class="highlight-rest"><div class="highlight"><pre><span></span>[:C:]
+
+  const char *var = &quot;value&quot; ;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="end-word-of-specifications-of-the-todo-file-s-format">
+<h2>End word of specifications of the *.todo file(s) format<a class="headerlink" href="#end-word-of-specifications-of-the-todo-file-s-format" title="Permalink to this headline">¶</a></h2>
+<p>Do what you must with this specifications and take it like an TODO file</p>
+<p>structuring advice, but this document was establish to define the</p>
+<p>specifications of a clean TODO file.</p>
+</div>
+<div class="section" id="example-of-a-todo-file">
+<h2>Example of a *.todo file:<a class="headerlink" href="#example-of-a-todo-file" title="Permalink to this headline">¶</a></h2>
+<p>An example from a real *.todo file from one of my projects.</p>
+<div class="highlight-rest"><div class="highlight"><pre><span></span><span class="gh">IT-EDIT TODO:</span>
+<span class="gh">+++++++++++++</span>
+
+[IDEA :Low:] Advertisement for it-edit:
+
+  it-edit provide so many schemes (more than the underlying library per default) because per example the
+
+  emacs scheme support italic for the ReST or Markdown language which the kate scheme doesn&#39;t support.
+
+  But I think the kate scheme is more adapt, with his settings, for program source code writing in terms of syntax coloration.
+
+  And the emacs theme is better to use for ReST per example, because of better syntax coloration of italic.
+
+  So better get 2 schemes, which you can easily switch, than missing a feature.
+
+[/IDEA]
+
+<span class="gh">Editor</span>
+<span class="gh">======</span>
+
+[IDEA :High:] Make the text-completion configurable.
+
+  <span class="m">1.</span> The text completion is one per file.
+
+  <span class="m">2.</span> The text-completion is one for all files (<span class="gs">**not easy**</span>).
+
+[/IDEA]
+
+[TODO :High:] Make the regex replacement become true. (See GLib regex) [/TODO]
+
+[IDEA :Medium:] What about enable/disable spell-check ? [/IDEA]
+
+<span class="gh">Schemes</span>
+<span class="gh">-------</span>
+
+[BUG :High:]
+
+They is a highlight problem with the search all highlight with emacs schemes.
+
+[/BUG]
+
+
+[IDEA :low: &lt;0F&gt;]
+
+Think of schemes pairs like:
+
+  <span class="m">+</span> kate &amp;&amp; emacs (bg white)
+
+  <span class="m">+</span> cobalt &amp;&amp; turbo (bg blue)
+
+  <span class="m">+</span> tango &amp;&amp; classic (Are settings defendant).
+
+  <span class="m">+</span> vsdark &amp;&amp; oblivion (bg maroon).
+
+  <span class="m">+</span> slate &amp;&amp; solarized-dark. (bg turquoise)
+
+  <span class="m">+</span> build &amp;&amp; solarized-light (bg light yellow).
+
+  <span class="m">+</span> matrix (standalone).
+
+[/IDEA]
+
+<span class="gh">Terminals</span>
+<span class="gh">=========</span>
+
+[IDEA :Medium:] Maybe a (main  start) settings individually for every different terminals and/or a main (main  start) settings configuration. [/IDEA]
+
+[TODO :Medium:] Open a file into an editor tab with a terminal pattern [/TODO]
+
+<span class="gh">Files</span>
+<span class="gh">=====</span>
+
+[TODO :Medium:] Add a ChangeLog entry !
+
+  The clipboard from the terminals has been upgraded from severals functionalities.
+
+[/TODO]
+</pre></div>
+</div>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Copyright (c)  2016,2017  Brüggemann Eddie.
+
+Permission is granted to copy, distribute and/or modify this document
+
+under the terms of the GNU Free Documentation License, Version 1.3
+
+or any later version published by the Free Software Foundation;
+
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+A copy of the license is included in the section entitled &quot;GNU
+
+Free Documentation License&quot;.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>*.todo</strong> or <strong>*.tdo</strong> file format specifications:</a><ul>
+<li><a class="reference internal" href="#markup-syntax">Markup syntax</a></li>
+<li><a class="reference internal" href="#markup-types">Markup Types</a><ul>
+<li><a class="reference internal" href="#before-complete-the-task">Before complete the task:</a></li>
+<li><a class="reference internal" href="#after-complete-the-task">After complete the task:</a></li>
+<li><a class="reference internal" href="#summary-of-type">Summary of TYPE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#priority-level">Priority_level</a></li>
+<li><a class="reference internal" href="#task-order">TASK_ORDER</a></li>
+<li><a class="reference internal" href="#advices">Advices</a></li>
+<li><a class="reference internal" href="#syntax-of-todo-file-s-content">Syntax of <strong>*.todo</strong> file(s) content</a><ul>
+<li><a class="reference internal" href="#for-titles">For Titles</a></li>
+<li><a class="reference internal" href="#for-text-decorations">For text decorations:</a></li>
+<li><a class="reference internal" href="#for-lists">For Lists:</a></li>
+<li><a class="reference internal" href="#for-keywords-values-pairing">For keywords values pairing:</a></li>
+<li><a class="reference internal" href="#for-links">For links:</a></li>
+<li><a class="reference internal" href="#for-footnotes">For footnotes:</a></li>
+<li><a class="reference internal" href="#for-comments">For comments:</a></li>
+<li><a class="reference internal" href="#for-code-text">For code text:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#end-word-of-specifications-of-the-todo-file-s-format">End word of specifications of the *.todo file(s) format</a></li>
+<li><a class="reference internal" href="#example-of-a-todo-file">Example of a *.todo file:</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_participating.html"
+                        title="previous chapter"><strong class="program">mk-project</strong> contributing advices</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_about.html"
+                        title="next chapter">About <strong>mk-project</strong></a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_todo_file_specifications.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_about.html" title="About mk-project"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_participating.html" title="mk-project contributing advices"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

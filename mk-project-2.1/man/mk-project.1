@@ -1,0 +1,329 @@
+.\" Man page generated from reStructuredText.
+.
+.TH MK-PROJECT  "1" "Copyright (C) 2016,2017 Brüggemann Eddie" "2.1"
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.\" man-page generated with rst2man.
+.
+.SH NAME
+.sp
+\fBmk\-project\fP \- a tool done to \fBease the development process\fP and a good bridge for the distributing process.
+.SH SYNOPSIS
+.sp
+\fBmk\-project\fP [\fIfilepath.mkp\fP]
+.SH DESCRIPTION
+.sp
+\fBmk\-project\fP is a \fBT.D.E\fP (\fBT\fPerminal \fBD\fPevelopement \fBE\fPnvironment): an \fButility\fP
+used to ease the \fBdevelopment\fP of \fBprograms\fP written in \fBC\fP or \fBC++\fP\&.
+.sp
+\fBmk\-project\fP is based on the \fBmake\fP tool which on his turn, use severals utilities, for providing many features and so many \fBmake\fP targets.
+.sp
+Callable through a terminal, in preference (or through the \fBG.U.I\fP (\fBG\fPraphical \fBU\fPser \fBI\fPnterface) from \fBmk\-project\fP),
+because of the wide number of \fBtargets\fP provided and some take argument(s).
+.sp
+\fBmk\-project\fP is an \fBEnvironment\fP in the terms of his wide field of \fBtargets\fP which aren\(aqt statically at all.
+.sp
+But \fBdynamically\fP \fIconfigurable\fP, \fIchangeable\fP and \fIcreatable\fP and so that the grass becomes greener...
+.nf
+
+.fi
+.sp
+.sp
+The \fBtargets\fP are short string easy to remember and so you can make work
+.INDENT 0.0
+.IP \(bu 2
+your computer, through the terminals
+.IP \(bu 2
+and mostly your head through \fBremembering\fP, \fBconfiguring\fP, \fBmodifying\fP and \fBcreating\fP \fBtargets\fP\&.
+.UNINDENT
+.sp
+And not become an \fBI.D.E\fP (\fBI\fPntegrated \fBD\fPevelopment \fBE\fPnvironment)  \fBzombie\fP thrashing his head and knows !
+.sp
+But a proud well informed programmer which knows exactly how his system and environment works which can easily automate the task using the \fBmake\fP syntax.
+.nf
+
+.fi
+.sp
+.sp
+So \fBmk\-project\fP wants to make you \fIthe development easier\fP \fBwithout\fP forgetting our \fIcomputational\fP \fBroots\fP (\fBTTY knows\fP) !
+.nf
+
+.fi
+.sp
+.sp
+Through providing you, through a \fBbig\fP \fBMakefile\fP, which is generate, \fBentirely\fP, according to your settings,
+.sp
+\fIthe easiest way of build all in one\fP\&.
+.nf
+
+.fi
+.sp
+.INDENT 0.0
+.TP
+.B note
+You can \fBedit\fP the \fBMakefile\fP at your convenience, of course \fB!\fP
+.UNINDENT
+.nf
+
+.fi
+.sp
+.sp
+\fBmk\-project\fP doesn\(aqt claim to replace an \fBIDE\fP or others \fBbuilding tools\fP but only give you an alternative which \fByou can entirely adapt\fP to your requirement.
+.nf
+
+.fi
+.sp
+.sp
+For being \fBtrue\fP the \fBmake\fP tool implementation is the way it make you the life easier
+.sp
+without forgetting your \fBTTY Knows\fP has impress me so that
+.sp
+I couldn\(aqt develop a good project without it
+.sp
+or in others words:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+If the make tool have never exist I would invent it...
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH CONFIGURATION
+.INDENT 0.0
+.IP \(bu 2
+\fBmk\-project\fP provide at first a solid base for building a work,
+.sp
+through a big Makefile, which can be edited manually in respect of the following few conventions:
+.INDENT 2.0
+.IP \(bu 2
+Configuration settings are set through the string:
+.INDENT 2.0
+.IP \(bu 2
+\fBF\fP For false (disable option).
+.IP \(bu 2
+\fBT\fP for true (enable option).
+.UNINDENT
+.IP \(bu 2
+Some few others variables:
+.sp
+The variable \fB$(SRC_FILES)\fP is build from the variable \fB$(SRC_DIR)\fP which value is always: \fB\&./src\fP\&.
+.UNINDENT
+.UNINDENT
+.nf
+
+.fi
+.sp
+.INDENT 0.0
+.INDENT 3.5
+This mean if you want to add files manually (\fIif you doesn\(aqt use the GUI for this task\fP) to your \fBMakefile\fP,
+.sp
+do it properly by using the \fB$(SRC_DIR)\fP variable:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+SRC_DIR   = ./src
+
+SRC_FILES = ${SRC_DIR}/my_file${EXT_SRC} \e
+            ${SRC_DIR}/subfolder/my_file${EXT_SRC}
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+So you will add file(s) relative to the \fB\&./src\fP directory where source file(s) have to reside.
+.INDENT 0.0
+.TP
+.B note
+Otherwise simply use the \fBG.U.I\fP (\fBG\fPraphical \fBU\fPser \fBI\fPnterface) for adding file(s) \fBProjects\fP \-> \fIAdd file(s) to project\fP\&.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.IP \(bu 2
+A building system for your source files.
+.IP \(bu 2
+Many tools for machine code investigation:
+.sp
+From the simple \fB\-g\fP option setting by a \fBGNU\-Compiler\fP for debbuging with \fBgdb\fP, through \fBdisassemble\fP the \fImachine code\fP files and \fIexecutable tracing\fP, to \fBprofiling\fP the entire work.
+.IP \(bu 2
+\fBsphinx\fP is currently only the single supported documentation generator.
+.sp
+And \fBmk\-project\fP will automatically generated a sphinx project if the user wants.
+.sp
+Providing all the targets your sphinx installation provides,
+.sp
+because \fBsphinx\fP is highly extensible.
+.IP \(bu 2
+The \fIman\-pages\fP generator is separate from the documentation using \fBrst2man\fP\&.
+.sp
+Because the content of the documentation and the man page should not be the same.
+.UNINDENT
+.sp
+\fBmk\-project\fP provide a simple \fBG.U.I\fP (\fBG\fPraphical \fBU\fPser \fBI\fPnterface) composing of terminals and a menu\-bar.
+.sp
+At first you can use the menu items to perform some actions like:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+Generate a new project: \fBProject\fP \-> \fINew Project\fP \-> \fINew project\fP\&.
+.sp
+Then you have to configure your project answering some basics questions like:
+.INDENT 2.0
+.IP \(bu 2
+Programming language.
+.IP \(bu 2
+Program name
+.IP \(bu 2
+Project folder (in which the new project will be generate).
+.UNINDENT
+.sp
+And some others according to your settings.
+.UNINDENT
+.sp
+Once the new project is generated you can access to the make targets either through the \fBmk\-project\fP \fBG.U.I\fP (\fBG\fPraphical \fBU\fPser \fBI\fPnterface) menu\-bar (\fIsimple click on the wanted target to execute it !\fP).
+.sp
+Or from the terminal of \fBmk\-project\fP or any else terminal at the condition to be in the \fBMakefile\fP current folder.
+.INDENT 0.0
+.TP
+.B note
+Simply type \fB$ make help\fP to get the list of available targets.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.nf
+
+.fi
+.sp
+.INDENT 0.0
+.INDENT 3.5
+If you add some user\-targets, to the \fBMakefile(s)\fP, think at adding them to the \fB$ make help\fP output.
+.sp
+So that mk\-project can auto\-detect your target and list it to add it as menu item to the make targets.
+.sp
+If you add a bash comment on the same line it will be displayed as tool\-tip by overfly the menu items.
+.UNINDENT
+.UNINDENT
+.sp
+So \fBmk\-project\fP provide another terminals ordered in tabs which you can add, remove, and configuring.
+.sp
+For purpose of terminals editor users like \fBvi\fP, \fBed\fP, \fBemacs\fP which can be easily launch an instance their favorite \fBterminal editor\fP in every tab all that continuing using the \fBmk\-project\fP \fIinterface\fP\&.
+.sp
+Finally you can switch between the single \fBmake terminal\fP (which should stay in the \fBMakefile\fP current folder) and the \fBedit terminal\fP terminals using the menu radio items.
+.SH FILES
+.sp
+A \fB*.mkp\fP file is a \fBmk\-project\fP generated file which hold informations about your project.
+.sp
+You can launch the program \fBmk\-project\fP with an \fB*.mkp\fP file given as argument.
+.sp
+Or Launching the \fB*.mkp\fP file with the \fBmk\-project\fP program through your file manager.
+.nf
+
+.fi
+.sp
+.sp
+You can \fBbuild\fP an \fBarchive\fP in many format: \fBtar\fP, \fBzip\fP, \fBrar\fP and so on from your project.
+.sp
+And to load it easily using the menu\-item \fBProjects\fP \-> \fIExtract and load project\fP\&.
+.nf
+
+.fi
+.sp
+.sp
+At the end of creating a \fBproject\fP you can export your settings as a profile file (\fB*.mkpp\fP).
+.sp
+And reload it the next time you create a \fBproject\fP\&.
+.sp
+This is useful to not every time set the same options again
+.sp
+like \fBnm options\fP, \fBobjdump options\fP, and so long on.
+.sp
+You can use the menuitem: \fBProjects\fP \-> \fIBuild project from profile\fP\&.
+.SH SEE ALSO
+.sp
+The full documentation for \fBmk\-project\fP is maintained as a Texinfo manual.
+.sp
+If the info program is properly installed at your site, the command
+.nf
+
+.fi
+.sp
+.INDENT 0.0
+.INDENT 3.5
+\fBinfo\fP mk\-project
+.UNINDENT
+.UNINDENT
+.sp
+should give you access to the complete manual or as
+.sp
+\fBHTML\fP documentation into the menu at \fBInfo\fP \-> \fIDocumentation\fP\&.
+.SH WEBSITE
+.sp
+\fBmk\-project\fP home page at:
+.sp
+<\fI\%http://www.open\-source\-projects.net/mk\-project/mk\-project\fP>
+.SH BUGS
+.sp
+Report \fBmk\-project\fP bugs to <\fI\%mrcyberfighter@gmail.com\fP>
+.sp
+or <\fI\%https://github.com/mrcyberfighter/mk\-project\fP>.
+.SH AUTHOR
+.sp
+Eddie Brüggemann <\fI\%mrcyberfighter@gmail.com\fP>
+.SH COPYRIGHT
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+mk\-project \- a tool done to ease the development process.
+Copyright (C) 2016,2017  Brüggemann Eddie.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.\" Generated by docutils manpage writer.
+.

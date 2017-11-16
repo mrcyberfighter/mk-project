@@ -1,0 +1,60 @@
+============
+TRANSLATIONS
+============
+
+If you want you can perform a translation into your native language
+
+or any other you really master the gettext macro are set.
+
+
+Because I write program only in English being a German immigrant to France and
+
+I think the future is in America so the English language with
+
+few changes like "color" and "colour".
+
+
+Thanks to mail me if you do so.
+
+And: thanks for contribution and feedback.
+
+======
+DONATE
+======
+
+No thank you, money makes dirty !
+
+======
+MacOSX
+======
+
+You can make a package for MacOSX because currently only the tar-ball,
+
+as good as it is, is provided for MacOSX.
+
+--------------------
+Either a *.pkg file.
+--------------------
+
+I though to generate it containing the *.dyn.lib files and library dependencies
+
+and the binaries.
+
+Then to copy the *.dyn.lib to their original location (coming from *brew*)
+
+with a shell script
+
+shipped with the *.pkg file.
+
+------
+Either
+------
+
+The new MacOSX package from what I know nothing.
+
+By twice every tip, knowledges, ideas, and so on...
+
+are welcome. 
+
+In the way of building a package for the lambda user.
+

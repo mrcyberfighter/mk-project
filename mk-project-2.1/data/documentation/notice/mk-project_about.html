@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>About mk-project &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mk-project Gtk3 types" href="mk-project-gtk3-types.html" />
+    <link rel="prev" title="*.todo or *.tdo file format specifications:" href="mk-project_todo_file_specifications.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project-gtk3-types.html" title="mk-project Gtk3 types"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_todo_file_specifications.html" title="*.todo or *.tdo file format specifications:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="about-mk-project">
+<h1>About <strong>mk-project</strong><a class="headerlink" href="#about-mk-project" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Eddie Brüggemann &lt;<a class="reference external" href="mailto:mrcyberfighter&#37;&#52;&#48;gmail&#46;com">mrcyberfighter<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">documenter:</th><td class="field-body">Eddie Brüggemann &lt;<a class="reference external" href="mailto:mrcyberfighter&#37;&#52;&#48;gmail&#46;com">mrcyberfighter<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="a-word-from-the-author">
+<h2>A word from the author<a class="headerlink" href="#a-word-from-the-author" title="Permalink to this headline">¶</a></h2>
+<p>I must recognize to write a program which <strong>generates</strong> and <strong>parse</strong> <em>severals files</em> is <strong>painfull</strong> in the <strong>C</strong> <em>programming language</em>.</p>
+<p>But I hope <em>that the community will adopt this usefull tool...</em></p>
+<p>I dislike <abbr title="Integrated Development Environment">I.D.E</abbr>&#8216;s because their advantages is their weak point:</p>
+<blockquote>
+<div><p>They let you make forget everything once you have configurate their interface.</p>
+<p>Even how to build your program (i.e. The command line to build your program, you know it ?).</p>
+</div></blockquote>
+<p><em>I use the commandline everyday</em> and by doing a <strong>good compromise</strong> between <strong>automating task</strong> and doesn&#8217;t forget <strong>how the command works</strong>.</p>
+<p>Is issue <strong>mk-project</strong>...</p>
+<p>The adding of the <code class="docutils literal"><span class="pre">Edit</span> <span class="pre">terminals</span></code> is suppose for <strong class="program">ed</strong>, <strong class="program">vi</strong>, <strong class="program">emacs</strong>, etc users.</p>
+<p>And the <abbr title="Graphical User Interface">G.U.I</abbr> <strong class="program">make</strong> targets launching can be extend <a class="reference internal" href="mk-project_presentation.html#futur-of-mk-project"><span class="std std-ref">like explain in the presentation</span></a>.</p>
+<p><strong>Finally</strong>: I hope you will join us to make <strong>mk-project</strong> support more and more programming languages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">I have put all my <em>savoir-faire</em> in this project for you and the entire community.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="libraries">
+<h3>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">libgtk-3-dev</span></code></li>
+<li><code class="docutils literal"><span class="pre">libvte-2.91-dev</span></code></li>
+<li><code class="docutils literal"><span class="pre">libxml2-dev</span></code></li>
+</ul>
+</div>
+<div class="section" id="main-program">
+<h3>Main program<a class="headerlink" href="#main-program" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The <strong class="program">make</strong> program.</li>
+<li><code class="docutils literal"><span class="pre">coreutils</span></code></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">python(3)-sphinx</span></code></li>
+<li><code class="docutils literal"><span class="pre">python(3)-docutils</span></code></li>
+</ul>
+</div>
+<div class="section" id="debugging">
+<h3>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">binutils</span></code></li>
+<li><code class="docutils literal"><span class="pre">libc-bin</span></code></li>
+<li><code class="docutils literal"><span class="pre">findutils</span></code></li>
+<li><code class="docutils literal"><span class="pre">file</span></code></li>
+<li><code class="docutils literal"><span class="pre">size</span></code></li>
+<li><code class="docutils literal"><span class="pre">hexdump</span></code></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Only required if you make usage of them, else the corresponding target won&#8217;t be available.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="code-formatters">
+<h3>Code formatters<a class="headerlink" href="#code-formatters" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">indent</span></code></li>
+<li><code class="docutils literal"><span class="pre">astyle</span></code></li>
+<li><code class="docutils literal"><span class="pre">bcpp</span></code></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Only required if you make usage of them, else the corresponding target won&#8217;t be available.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="internationalisation">
+<h3>Internationalisation<a class="headerlink" href="#internationalisation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">gettext</span></code></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Only required if you make usage of them, else the corresponding target won&#8217;t be available.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="documentation-source">
+<h3>Documentation Source<a class="headerlink" href="#documentation-source" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">GNU</span> <span class="pre">Make</span> <span class="pre">manual</span></code> (A very good manual from the GNU manuals serie).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">authors:</th><td class="field-body">Stallman, McGrath, Smith.</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">C/C++</span> <span class="pre">Compiling</span></code> (A very good book about libraries and machine code investigation).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Milan Stevanovic.</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">Writing</span> <span class="pre">efficient</span> <span class="pre">C</span> <span class="pre">code</span></code>.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Jonas Skeppstedt (author of the compiler <a class="reference internal" href="#iso-conform-compiler-list"><span class="std std-ref">ISO Certicated and Validated</span></a> <strong class="program">lmpcc</strong>).</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="iso-iso-iec-9899-19999-c-language-conform-compiler-list">
+<span id="iso-conform-compiler-list"></span><h4>ISO (ISO/IEC 9899:19999, C language) conform compiler list<a class="headerlink" href="#iso-iso-iec-9899-19999-c-language-conform-compiler-list" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>EDG C/C++ 3.0.1, december 2002.</li>
+<li>lmpcc C99 Compiler for Linux / PowerPC 1.3, july 2003.</li>
+<li>Sun studio 9, May 2004.</li>
+<li>IBM VAC 6.0.0.8, October 2004.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">No <strong class="program">gcc</strong> neither <strong class="program">clang</strong> are certified to be fully compliant with it.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="thanks">
+<h3>THANKS<a class="headerlink" href="#thanks" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Dennis M Ritchie, for UNIX and C.</li>
+<li>Richard Stallman, for gcc and the F.S.F movement.</li>
+<li>Ken Tompson, for UNIX.</li>
+<li>Linus Tornvalds, for Linux and git.</li>
+<li>And to every worker for a better world...</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="author-final-word">
+<h3>Author final word:<a class="headerlink" href="#author-final-word" title="Permalink to this headline">¶</a></h3>
+<p>I use <strong class="program">mk-project</strong> since the version <strong>1.0</strong> (spring <em>2016</em>) for my programs.</p>
+<p>Accompanier with my <a class="reference external" href="http://www.open-source-projects.net/it-edit/it-edit">terminals integrated editor it-edit</a>,</p>
+<p>where I type my targets instead of using vim or any other <abbr>T.U.I Terminal User Interface</abbr>.</p>
+<p>I must confess that I do not use all the targets provided by mk-project.</p>
+<p>My most used targets are:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make
+
+$ make -B
+
+$ make <span class="nb">exec</span>
+
+$ make fdebug
+
+$ make gdb
+
+$ make search-pattern <span class="nv">argv</span><span class="o">=</span><span class="s2">&quot;pattern&quot;</span>
+
+...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">About <strong>mk-project</strong></a><ul>
+<li><a class="reference internal" href="#a-word-from-the-author">A word from the author</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li><a class="reference internal" href="#libraries">Libraries</a></li>
+<li><a class="reference internal" href="#main-program">Main program</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#debugging">Debugging</a></li>
+<li><a class="reference internal" href="#code-formatters">Code formatters</a></li>
+<li><a class="reference internal" href="#internationalisation">Internationalisation</a></li>
+<li><a class="reference internal" href="#documentation-source">Documentation Source</a><ul>
+<li><a class="reference internal" href="#iso-iso-iec-9899-19999-c-language-conform-compiler-list">ISO (ISO/IEC 9899:19999, C language) conform compiler list</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#thanks">THANKS</a></li>
+<li><a class="reference internal" href="#author-final-word">Author final word:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_todo_file_specifications.html"
+                        title="previous chapter"><strong>*.todo</strong> or <strong>*.tdo</strong> file format specifications:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project-gtk3-types.html"
+                        title="next chapter"><strong class="program">mk-project</strong> Gtk3 types</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_about.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project-gtk3-types.html" title="mk-project Gtk3 types"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_todo_file_specifications.html" title="*.todo or *.tdo file format specifications:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

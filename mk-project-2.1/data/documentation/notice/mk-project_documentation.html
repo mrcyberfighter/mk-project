@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mk-project documentation &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mk-project code investigating, debugging and disassembling" href="mk-project_debugging.html" />
+    <link rel="prev" title="Working on an existing mk-project project" href="mk-project_current_project.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_debugging.html" title="mk-project code investigating, debugging and disassembling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_current_project.html" title="Working on an existing mk-project project"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mk-project-documentation">
+<span id="id1"></span><h1><strong class="program">mk-project</strong> documentation<a class="headerlink" href="#mk-project-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">mk-project</strong> currently support only one single documentation generator: <strong class="program">sphinx</strong>.</p>
+<p>sphinx was first design to generate official python documentation but time has past and <strong class="program">sphinx</strong></p>
+<p>has become very popular at first by the python community.</p>
+<p>Without any particular extension (like autodoc) <strong class="program">sphinx</strong> is based on the <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">R.e.S.T Re Structured Text</a> language but <a class="reference external" href="http://markdown-syntax.html">Mardown</a> can be used through modifying the <code class="file docutils literal"><span class="pre">conf.py</span></code> file.</p>
+<p>The Rest language is an easy markup language as like markdown but it is standardized (Markdown not) and can be extented what sphinx does.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Some <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">R.e.S.T Re Structured Text</a> extension permit to build <strong>C</strong> andf <strong>C++</strong> documentation without using any extension.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="you-are-a-sphinx-user">
+<h2>You are a sphinx user:<a class="headerlink" href="#you-are-a-sphinx-user" title="Permalink to this headline">¶</a></h2>
+<p>So everything is are right.</p>
+</div>
+<div class="section" id="you-aren-t-a-sphinx-user">
+<h2>You aren&#8217;t a sphinx user<a class="headerlink" href="#you-aren-t-a-sphinx-user" title="Permalink to this headline">¶</a></h2>
+<p>Let me convince you to adopt sphinx by learning the easy markup <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">R.e.S.T Re Structured Text</a> or <a class="reference external" href="http://markdown-syntax.html">Markdown</a>  language.</p>
+<p>For generating documentation in many formats, <strong class="program">mk-project</strong> generate make targets from the make output according which sphinx extension are installed on your system.</p>
+<p>Per exemple currently on my system.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make sphinx-html <span class="c1"># to make standalone HTML files</span>
+
+make sphinx-dirhtml <span class="c1"># to make HTML files named index.html in directories</span>
+
+make sphinx-singlehtml <span class="c1"># to make a single large HTML file</span>
+
+make sphinx-pickle <span class="c1"># to make pickle files</span>
+
+make sphinx-json <span class="c1"># to make JSON files</span>
+
+make sphinx-htmlhelp <span class="c1"># to make HTML files and an HTML help project</span>
+
+make sphinx-qthelp <span class="c1"># to make HTML files and a qthelp project</span>
+
+make sphinx-applehelp <span class="c1"># to make an Apple Help Book</span>
+
+make sphinx-devhelp <span class="c1"># to make HTML files and a Devhelp project</span>
+
+make sphinx-epub <span class="c1"># to make an epub</span>
+
+make sphinx-epub3 <span class="c1"># to make an epub3</span>
+
+make sphinx-latex <span class="c1"># to make LaTeX files, you can set PAPER=a4 or PAPER=letter</span>
+
+make sphinx-latexpdf <span class="c1"># to make LaTeX files and run them through pdflatex</span>
+
+make sphinx-latexpdfja <span class="c1"># to make LaTeX files and run them through platex/dvipdfmx</span>
+
+make sphinx-lualatexpdf <span class="c1"># to make LaTeX files and run them through lualatex</span>
+
+make sphinx-xelatexpdf <span class="c1"># to make LaTeX files and run them through xelatex</span>
+
+make sphinx-text <span class="c1"># to make text files</span>
+
+make sphinx-man <span class="c1"># to make manual pages</span>
+
+make sphinx-texinfo <span class="c1"># to make Texinfo files</span>
+
+make sphinx-info <span class="c1"># to make Texinfo files and run them through makeinfo</span>
+
+make sphinx-gettext <span class="c1"># to make PO message catalogs</span>
+
+make sphinx-changes <span class="c1"># to make an overview of all changed/added/deprecated items</span>
+
+make sphinx-xml <span class="c1"># to make Docutils-native XML files</span>
+
+make sphinx-pseudoxml <span class="c1"># to make pseudoxml-XML files for display purposes</span>
+
+make sphinx-linkcheck <span class="c1"># to check all external links for integrity</span>
+
+make sphinx-doctest <span class="c1"># to run all doctests embedded in the documentation (if enabled)</span>
+
+make sphinx-coverage <span class="c1"># to run coverage check of the documentation (if enabled)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Many themes are available.</li>
+<li>Many contrib packages are available for extending sphinx in many ways.</li>
+<li>The <abbr title="Read The Doc">rdt</abbr> theme provide a web service, format the output in his theme and provide the documentation downloadable in many format.</li>
+</ul>
+</div>
+<div class="section" id="mk-project-documentation-visualize">
+<h2><strong class="program">mk-project</strong> documentation visualize<a class="headerlink" href="#mk-project-documentation-visualize" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">mk-project</strong> permit you to visualize all the output files in different manners:</p>
+<p><strong class="program">mk-project</strong> will search severals documentation viewer programs on your installation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="simple">
+<li>The <strong class="program">make</strong> varibale <strong class="makevar">${BROWSER}</strong> will link to your <strong class="program">browser</strong>.</li>
+<li>The <strong class="program">make</strong> variable <strong class="makevar">{INFO}</strong> will link to the <strong class="program">info</strong> program.</li>
+<li>The <strong class="program">make</strong> variable <strong class="makevar">{MAN}</strong> will link to the <strong class="program">man</strong> program.</li>
+<li>The <strong class="program">make</strong> variable <strong class="makevar">{EPUB}</strong> will link to your <strong class="program">epub</strong> viewer (<strong class="program">fbreader</strong> or <strong class="program">okular</strong>) if available.</li>
+<li>The <strong class="program">make</strong> variable <strong class="makevar">{PDF}</strong> will link to your <strong class="program">pdf</strong> viewer if available.</li>
+</ul>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">If <strong class="program">mk-project</strong> doesn&#8217;t find a binary for viewing a file it will use the <strong class="program">xdg-open</strong> program as fallback.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>The <code class="docutils literal"><span class="pre">sphinx-show-\*</span></code> targets are set <em>arbitrary</em></p>
+<p><strong>as best as I can</strong></p>
+<p>because their is either <strong>no</strong> way to know into which <code class="docutils literal"><span class="pre">sub-folder</span></code> the <strong>documentation</strong> will be <strong>generate</strong></p>
+<p>and <strong>nor</strong> the <strong>filename the documentation will have</strong>...</p>
+<p class="last">Simply <strong>trust me</strong> or correct it <strong>yourself</strong> if necessary.</p>
+</div>
+</div>
+<div class="section" id="mk-project-slots">
+<h2><strong class="program">mk-project</strong> slots<a class="headerlink" href="#mk-project-slots" title="Permalink to this headline">¶</a></h2>
+<p>Always remember that you can write some <strong class="program">make</strong> targets into the <strong class="program">mk-project</strong> Makefile.</p>
+<p>To ease you the documentation generating process and so <a class="reference internal" href="mk-project_presentation.html#mk-project-hackme"><span class="std std-ref">extend mk-project</span></a>.</p>
+<p>Per example by the first version of mk-project, it use a mix of:</p>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">pandoc</span></code> package.</li>
+<li>The <code class="docutils literal"><span class="pre">python(3)-docutils</span></code> and the <code class="docutils literal"><span class="pre">rst2pdf</span></code> packages.</li>
+<li>The <code class="docutils literal"><span class="pre">texinfo</span></code> and <code class="docutils literal"><span class="pre">texlive</span></code> packages.</li>
+</ul>
+<p>To provide ReST, Markdown and texinfo documentation generation but Only one page per output format.</p>
+<p><strong>but</strong> I used <strong class="program">sphinx</strong> to write the documentation of the version 1.0 of <strong class="program">mk-project</strong></p>
+<p>with some few self -builded targets like this:</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="c">################################################################################</span>
+
+<span class="c"># sphinx slot.</span>
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">sphinx</span>-<span class="n">singlehtml</span> <span class="n">sphinx</span>-<span class="n">html</span> <span class="n">sphinx</span>-<span class="n">htmlhelp</span> <span class="n">sphinx</span>-<span class="n">epub</span> <span class="n">sphinx</span>-<span class="n">info</span> <span class="n">sphinx</span>-<span class="n">man</span>
+
+<span class="c"># sphinx Makefile singlehtml target link.</span>
+<span class="nf">sphinx-singlehtml</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="si">${</span><span class="nv">MAKE</span><span class="si">}</span> singlehtml <span class="p">;</span>
+
+<span class="c"># sphinx Makefile html target link.</span>
+<span class="nf">sphinx-html</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="si">${</span><span class="nv">MAKE</span><span class="si">}</span> html <span class="p">;</span>
+
+<span class="c"># sphinx Makefile epub target link.</span>
+<span class="nf">sphinx-epub</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="si">${</span><span class="nv">MAKE</span><span class="si">}</span> epub <span class="p">;</span>
+
+<span class="c"># sphinx Makefile info target link.</span>
+<span class="nf">sphinx-info</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="si">${</span><span class="nv">MAKE</span><span class="si">}</span> info <span class="p">;</span>
+
+<span class="c"># sphinx Makefile man target link.</span>
+<span class="nf">sphinx-man</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="si">${</span><span class="nv">MAKE</span><span class="si">}</span> man <span class="p">;</span>
+
+<span class="c"># sphinx Makefile doctest target link.</span>
+<span class="nf">sphinx-doctest</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="si">${</span><span class="nv">MAKE</span><span class="si">}</span> doctest
+
+
+<span class="c"># sphinx builded files showing targets.</span>
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">sphinx</span>-<span class="n">show</span>-<span class="n">singlehtml</span> <span class="n">sphinx</span>-<span class="n">show</span>-<span class="n">html</span> <span class="n">sphinx</span>-<span class="n">show</span>-<span class="n">epub</span> <span class="n">sphinx</span>-<span class="n">show</span>-<span class="n">info</span> <span class="n">sphinx</span>-<span class="n">show</span>-<span class="n">man</span>
+
+<span class="nf">sphinx-show-singlehtml</span><span class="o">:</span>
+      <span class="nb">cd</span> ./sphinx_doc/build/singlehtml <span class="p">;</span> <span class="si">${</span><span class="nv">BROWSER</span><span class="si">}</span> index.html <span class="p">;</span>
+
+<span class="nf">sphinx-show-html</span><span class="o">:</span>
+      <span class="nb">cd</span> ./sphinx_doc/build/html <span class="p">;</span> <span class="si">${</span><span class="nv">BROWSER</span><span class="si">}</span> index.html <span class="p">;</span>
+
+<span class="nf">sphinx-show-epub</span><span class="o">:</span>
+      <span class="nb">cd</span> ./sphinx_doc/build/epub  <span class="p">;</span> <span class="si">${</span><span class="nv">EPUB</span><span class="si">}</span> *.epub <span class="p">;</span>
+
+<span class="nf">sphinx-show-info</span><span class="o">:</span>
+      <span class="nb">cd</span> ./sphinx_doc/build/texinfo <span class="p">;</span> <span class="si">${</span><span class="nv">INFO</span><span class="si">}</span> -f *.info <span class="p">;</span>
+
+<span class="nf">sphinx-show-man</span><span class="o">:</span>
+      <span class="nb">cd</span> ./sphinx_doc/build/man <span class="p">;</span> <span class="si">${</span><span class="nv">MAN</span><span class="si">}</span> -f <span class="si">${</span><span class="nv">PRGNAME</span><span class="si">}</span>.<span class="si">${</span><span class="nv">MAN_LEVEL</span><span class="si">}</span> <span class="p">;</span>
+
+<span class="c"># sphinx clean target.</span>
+<span class="nf">sphinx-clean</span><span class="o">:</span>
+      <span class="nb">cd</span> sphinx_doc <span class="p">;</span> <span class="nb">cd</span> build <span class="p">;</span> rm -R * <span class="p">;</span>
+
+<span class="c">################################################################################</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rst2man">
+<h2><code class="docutils literal"><span class="pre">rst2man</span></code><a class="headerlink" href="#rst2man" title="Permalink to this headline">¶</a></h2>
+<p>If you get the program <strong class="program">rst2man</strong> installed on your system,</p>
+<p><strong class="program">mk-project</strong> will create a folder named <code class="docutils literal"><span class="pre">rst2man</span></code> into the project tree into</p>
+<p>which you will find a file <code class="docutils literal"><span class="pre">${PRGNAME}.rst</span></code> to edit a man-page with <strong class="program">rst2man</strong>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">Because the man-page is often apart from the documentation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong class="program">mk-project</strong> documentation</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#you-are-a-sphinx-user">You are a sphinx user:</a></li>
+<li><a class="reference internal" href="#you-aren-t-a-sphinx-user">You aren&#8217;t a sphinx user</a></li>
+<li><a class="reference internal" href="#mk-project-documentation-visualize"><strong class="program">mk-project</strong> documentation visualize</a></li>
+<li><a class="reference internal" href="#mk-project-slots"><strong class="program">mk-project</strong> slots</a></li>
+<li><a class="reference internal" href="#rst2man"><code class="docutils literal"><span class="pre">rst2man</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_current_project.html"
+                        title="previous chapter">Working on an existing <strong class="program">mk-project</strong> project</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_debugging.html"
+                        title="next chapter"><strong class="program">mk-project</strong> code investigating, debugging and disassembling</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_documentation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_debugging.html" title="mk-project code investigating, debugging and disassembling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_current_project.html" title="Working on an existing mk-project project"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

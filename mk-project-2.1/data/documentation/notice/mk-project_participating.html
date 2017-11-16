@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mk-project contributing advices &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="*.todo or *.tdo file format specifications:" href="mk-project_todo_file_specifications.html" />
+    <link rel="prev" title="mk-project code formatters" href="mk-project_code_formatting.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_todo_file_specifications.html" title="*.todo or *.tdo file format specifications:"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_code_formatting.html" title="mk-project code formatters"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mk-project-contributing-advices">
+<span id="mk-project-participating"></span><h1><strong class="program">mk-project</strong> contributing advices<a class="headerlink" href="#mk-project-contributing-advices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mk-project-zen">
+<h2>mk-project zen<a class="headerlink" href="#mk-project-zen" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>mk-project zen is simple:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>The minimum work for the user.
+
+The maximum configuration possiblities.
+
++ Minimum informations asking to the user, maximum deduced.
+
++ Maximum possibilities, with a minimum informations and binaries.
+
+Bring the maximum with the minimum.
+
+! No package is obligatory except the coreutils
+  and them needed by the programming language.
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="how-contibute">
+<h2>How contibute ?<a class="headerlink" href="#how-contibute" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Write a project for a programming language which isn&#8217;t done, or enhance one.</p>
+<p>Write some useful <strong class="program">make</strong> targets for any purpose you want.</p>
+<p>Write <strong class="program">make</strong> targets forn your well know documentation generators, for <strong class="program">mk-project</strong>.</p>
+<p>Every help is welcome, thanks.</p>
+</div></blockquote>
+<div class="section" id="for-writing-a-new-project">
+<h3>For writing a new project:<a class="headerlink" href="#for-writing-a-new-project" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Simply fork the project.</li>
+<li>Make a folder named <code class="docutils literal"><span class="pre">lang_mk-project</span></code> (per example:
+perl_mk-project).</li>
+<li>Put your stuff inside this folder.</li>
+<li>And ask for merging.</li>
+</ol>
+<p>After your submission your project will be a mimimum tested and they is no matter of refusement only enhancement.</p>
+</div></blockquote>
+</div>
+<div class="section" id="makefile">
+<h3>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>You can take the included makefiles (<code class="docutils literal"><span class="pre">./.SubMakefiles/*.mk</span></code>)</p>
+<p>To put it into your project, this is highly recommanded, <strong>don&#8217;t reinvent the wheel</strong>.</p>
+<p>We want targets for:</p>
+<ul class="simple">
+<li>Executing the source.</li>
+<li>debugging the source.</li>
+<li>profiling the source.</li>
+<li>And what you want else...</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="scripting">
+<h3>Scripting<a class="headerlink" href="#scripting" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>We script into <strong>bash</strong> or <strong>python</strong> (the script must be compatible with <strong>python2</strong> and <strong>python3</strong>).</p>
+<p>Or if your project is about a scripting language you can use this language.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">Think to modify the script <code class="docutils literal"><span class="pre">prepend_license.py</span></code> to adapt the comment sign from your language</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-text"><div class="highlight"><pre><span></span>It&#39;s easy even if you don&#39;t know python or
+
+in the worse case i will do this for you.
+</pre></div>
+</div>
+<p>Scripts are set into the <code class="docutils literal"><span class="pre">./.scripts</span></code> folder.</p>
+</div></blockquote>
+</div>
+<div class="section" id="becoming">
+<h3>Becoming<a class="headerlink" href="#becoming" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>If you create a <strong>Makefile</strong> project you become a <strong>coauthor</strong> of <strong class="program">mk-project</strong></p>
+<p>If you enhance a project you become a <strong>contributor</strong> of <strong class="program">mk-project</strong></p>
+<p>So if you submit a project for your well know language(s),</p>
+<p>you will take first the benefit to get a <strong>Project done</strong> for <strong>your programming language</strong>.</p>
+<p>And the proudness to contribute to <strong class="program">mk-project</strong></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">I will ensure the updating of the GUI at every new project adding.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="notes">
+<h3>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>If you write the Makefile for your language, think at writing a minimal example project who writes</p>
+<p><code class="docutils literal"><span class="pre">hello</span> <span class="pre">world</span> <span class="pre">welcome</span> <span class="pre">to</span> <span class="pre">mk-project</span></code></p>
+<p>on <code class="docutils literal"><span class="pre">stdout</span></code>.</p>
+<p>You can enhance your project with everything you want like the debugging definition in the C/C++ language,</p>
+<p>and write entire module(s) for the project purpose.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Makefile<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="binaries">
+<h3>BINARIES<a class="headerlink" href="#binaries" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">Verify the presence of the binary using the function
+<strong>BINARY_EXIST</strong>.</p>
+</li>
+<li><p class="first"><strong>UPPERCASE</strong> the binary variable name for no confusion.</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">BINARY</span> <span class="o">=</span> <span class="si">${</span><span class="nv">call</span><span class="p"> BINARY_EXIST, binary</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">test if binary installed with:</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="c"># Compare the ${BINARY} variable with an empty string.</span>
+<span class="cp">ifneq (${BINARY}, )</span>
+<span class="c"># do work...</span>
+<span class="cp">endif</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Binaries test are in file <code class="docutils literal"><span class="pre">./.SubMakefiles/binary_checks.mk</span></code></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="variables">
+<h3>VARIABLES<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">Make the same for configuration:</p>
+<ul class="simple">
+<li>use <strong>T</strong> for <strong>TRUE</strong></li>
+<li>use <strong>F</strong> for <strong>FALSE</strong></li>
+</ul>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="c"># No comment on following line and remove trailing spaces.</span>
+<span class="nv">OVERWRITE</span> <span class="o">=</span> T
+
+<span class="c"># Compare the ${OVERWRITE} variable with T (don&#39;t insert  a space).</span>
+<span class="cp">ifeq (${OVERWRITE},T)</span>
+<span class="c"># Do work...</span>
+<span class="cp">else</span>
+<span class="c"># Do work...</span>
+<span class="cp">endif</span>
+</pre></div>
+</div>
+<p>The configuration options set or select by the user must be at the
+top of the Makefile,</p>
+<p>with a default value.</p>
+<p>And you must inform me about in the goal to update the GUI properly.</p>
+</li>
+<li><p class="first">Use the assigments operators cleverly:</p>
+</li>
+</ul>
+<blockquote>
+<div><div class="highlight-make"><div class="highlight"><pre><span></span><span class="c"># define var     value  # Value definition (used for multiline).</span>
+<span class="c"># define var =   value  # indirect. (the value change at the next assignment for the final variable value.)</span>
+<span class="c"># define var :=  value  # direct.   (the value doesn&#39;t change at the next assignment for the final variable value.)</span>
+<span class="c"># define var ::= value  # retro and inter compatibility with other make tools.</span>
+<span class="c"># define var +=  value  # increment assignment operator.</span>
+<span class="c"># define var ?=  value  # shell expansion operator.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li>Use the increment operator ( <strong>+=</strong> ) cleverly so that the user can
+define the variable on the command-line.</li>
+</ul>
+<blockquote>
+<div><div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">USE_TABS</span> <span class="o">+=</span> -t
+</pre></div>
+</div>
+<p>Or <strong>not</strong>:</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span>   override <span class="nv">MY_VAR</span> <span class="o">=</span> value
+
+<span class="c">#</span>
+</pre></div>
+</div>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Take care by inserting comments some settings doesn&#8217;t support comments on the same line as the variable.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>You can verify if a file exist or if it&#8217;s generated by using the function <strong>FILE_EXIST</strong></p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">MY_FILE</span> <span class="o">=</span> <span class="si">${</span><span class="nv">call</span><span class="p"> FILE_EXIST, /path/to/my_file.ext</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>It will return <strong>T</strong> (TRUE) or <strong>F</strong> (FALSE) if the file exist or not.</p>
+</div></blockquote>
+</div>
+<div class="section" id="files-and-filepath">
+<h3>FILES and FILEPATH<a class="headerlink" href="#files-and-filepath" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">First define all path relativ, included Makefiles are at the same position as the main Makefile.</p>
+</li>
+<li><p class="first">Define a variable for the <strong>FILEPATH</strong> and for the <strong>FILE</strong>.</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">MY_FILEPATH</span> <span class="o">=</span> ./filepath/...
+
+<span class="nv">MY_FILE</span> <span class="o">=</span> <span class="si">${</span><span class="nv">MY_FILEPATH</span><span class="si">}</span>/my_file.txt
+</pre></div>
+</div>
+<p>We construct the filepath relativ to the main Makefile: (./Makefile)</p>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Filepath are defined in file <code class="docutils literal"><span class="pre">./.SubMakefiles/path.mk</span></code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p class="first">You can (not obligatory) put the extension in a variable, if this
+make sens.</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">EXT_TYPE</span> <span class="o">=</span> .type
+
+<span class="nv">MY_FILE</span> <span class="o">=</span> <span class="si">${</span><span class="nv">MY_FILEPATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">FILE</span><span class="si">}${</span><span class="nv">EXT_TYPE</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can use the make function <strong>FILE_EXIST</strong> to verify the presence
+of a file.</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">MY_FILE</span> <span class="o">=</span> <span class="si">${</span><span class="nv">call</span><span class="p"> FILE_EXIST, my_file</span><span class="si">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">The included Makefiles are correctly named and end in the extension *.mk so that an editor can reconize them.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">note:</th><td class="field-body">The included Makefiles are set in the SubMakefiles folder.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="libraries">
+<h3>LIBRARIES<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Today most of the libraries use the program <strong class="program">pkg-config</strong> which you can use to auto-detect the</p>
+<p>presence of a library.</p>
+<p>By using the <strong>PKG_CONFIG_EXIST</strong> function.</p>
+<div class="highlight-make"><div class="highlight"><pre><span></span><span class="nv">HAS_LIB_PC</span> <span class="o">=</span>  <span class="si">${</span><span class="nv">call</span><span class="p"> PKG_CONFIG_EXIST, thelibpc</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>It will return <strong>T</strong> (TRUE) or <strong>F</strong> (FALSE) in relationship of the presence of a *.pc file for <code class="docutils literal"><span class="pre">thelibpc</span></code>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="targets">
+<h3>TARGETS<a class="headerlink" href="#targets" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>If you need to compose some targets names from more than a word, separate them by:</p>
+<ul>
+<li><p class="first">A <strong>&#8216;-&#8216;</strong> (<em>minus</em>) if it&#8217;s a <strong>user-target</strong>.</p>
+</li>
+<li><p class="first">A <strong>&#8216;_&#8217;</strong> (<em>underscore</em>) if it&#8217;s an <strong>intern_target</strong>.</p>
+<p>Which can be put together with others intern targets to form a <strong>user-target</strong>.</p>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Don&#8217;t forget the <code class="docutils literal"><span class="pre">.PHONY:</span></code> definition if the target has no depdending targets.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="advices">
+<h3>ADVICES<a class="headerlink" href="#advices" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>IMPORTANT:</strong> make doesn&#8217;t support trailing spaces, so strip them.</p>
+<p>You can use the following command</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sed -i <span class="s1">&#39;s/[[:space:]]$//&#39;</span> filepath
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="code-formatters">
+<h2>code formatters<a class="headerlink" href="#code-formatters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>We can make usages of following utilities, for code formatting in severals languages:</div></blockquote>
+<div class="section" id="c">
+<h3>C<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">indent</strong> (checked).</li>
+<li><strong class="program">astyle</strong> (checked).</li>
+<li><strong class="program">bcpp</strong> (checked).</li>
+<li><strong class="program">uncrustify</strong> (not check, help me !).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h3>C++<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">indent</strong> (checked).</li>
+<li><strong class="program">astyle</strong> (checked).</li>
+<li><strong class="program">bcpp</strong> (checked).</li>
+<li><strong class="program">uncrustify</strong> (not check, help me !).</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Must check if we can use this scripts by the <strong class="program">universalindentgui</strong> authors or the tools author(s).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="html">
+<h3>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">tidy</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="css">
+<h3>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">csstidy</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="javascipt">
+<h3>Javascipt<a class="headerlink" href="#javascipt" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">JsDecoder.js</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Must check if we can use this scripts by the <strong class="program">universalindentgui</strong> authors or the tools author(s).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="perl">
+<h3>Perl<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">perltidy</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="php">
+<h3>PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">phpStylist.php</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Must check if we can use this scripts by the <strong class="program">universalindentgui</strong> authors or the tools author(s).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ruby">
+<h3>Ruby<a class="headerlink" href="#ruby" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">rbeautify.rb</strong> (not checked).</li>
+<li><strong class="program">ruby_formatter.rb</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Must check if we can use this scripts by the <strong class="program">universalindentgui</strong> authors or the tools author(s).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="xml">
+<h3>XML<a class="headerlink" href="#xml" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="program">xmlindent</strong> (not checked).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="using-a-code-formatter">
+<h3>Using a code formatter<a class="headerlink" href="#using-a-code-formatter" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The usage of a code formatter must be user defined controlled so that:</p>
+<ol class="arabic simple">
+<li>We ask the user if he wants to use it.</li>
+<li>We make his usage conditionnaly in the corresponding Makefile: <code class="docutils literal"><span class="pre">./.SubMakefiles/code_formatter.mk</span></code>.</li>
+</ol>
+<blockquote>
+<div><p>By using a variable named <strong class="makevar">USE_(TOOL NAME UPPERCASE)</strong> given the value:</p>
+<ul class="simple">
+<li><strong>T</strong> for <code class="docutils literal"><span class="pre">true</span></code> or</li>
+<li><strong>F</strong> for <code class="docutils literal"><span class="pre">false</span></code>.</li>
+</ul>
+<p>According the user settings.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong class="program">mk-project</strong> contributing advices</a><ul>
+<li><a class="reference internal" href="#mk-project-zen">mk-project zen</a></li>
+<li><a class="reference internal" href="#how-contibute">How contibute ?</a><ul>
+<li><a class="reference internal" href="#for-writing-a-new-project">For writing a new project:</a></li>
+<li><a class="reference internal" href="#makefile">Makefile</a></li>
+<li><a class="reference internal" href="#scripting">Scripting</a></li>
+<li><a class="reference internal" href="#becoming">Becoming</a></li>
+<li><a class="reference internal" href="#notes">NOTES</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">Makefile</a><ul>
+<li><a class="reference internal" href="#binaries">BINARIES</a></li>
+<li><a class="reference internal" href="#variables">VARIABLES</a></li>
+<li><a class="reference internal" href="#files">Files</a></li>
+<li><a class="reference internal" href="#files-and-filepath">FILES and FILEPATH</a></li>
+<li><a class="reference internal" href="#libraries">LIBRARIES</a></li>
+<li><a class="reference internal" href="#targets">TARGETS</a></li>
+<li><a class="reference internal" href="#advices">ADVICES</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code-formatters">code formatters</a><ul>
+<li><a class="reference internal" href="#c">C</a></li>
+<li><a class="reference internal" href="#id2">C++</a></li>
+<li><a class="reference internal" href="#html">HTML</a></li>
+<li><a class="reference internal" href="#css">CSS</a></li>
+<li><a class="reference internal" href="#javascipt">Javascipt</a></li>
+<li><a class="reference internal" href="#perl">Perl</a></li>
+<li><a class="reference internal" href="#php">PHP</a></li>
+<li><a class="reference internal" href="#ruby">Ruby</a></li>
+<li><a class="reference internal" href="#xml">XML</a></li>
+<li><a class="reference internal" href="#using-a-code-formatter">Using a code formatter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_code_formatting.html"
+                        title="previous chapter"><strong>mk-project</strong> code formatters</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_todo_file_specifications.html"
+                        title="next chapter"><strong>*.todo</strong> or <strong>*.tdo</strong> file format specifications:</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_participating.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_todo_file_specifications.html" title="*.todo or *.tdo file format specifications:"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_code_formatting.html" title="mk-project code formatters"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

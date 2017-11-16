@@ -1,0 +1,66 @@
+mk-project (1.0.0) ; urgency=LOW
+
+  * first Release
+
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Fri, 24 Jun 2016 00:42:09 +0100
+
+mk-project (2.1) ; urgency=LOW
+
+  * Third release, I make no rush about it and
+ 
+  * I forget the ChangeLog for version 2.0.  
+ 
+  * Read the documentation for further informations.
+ 
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Tue, 07 Nov 2017 03:43:49 +0100
+
+mk-project (2.1) ; urgency=LOW
+
+  * Implement the g_spawn_async of the terminals which rid a bug before.
+
+    * If the g_spawn_async function fail fallback to synchrone terminals.
+
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Tue, 07 Nov 2017 03:43:49 +0100
+
+
+mk-project (2.1) ; urgency=LOW
+
+  * Adding of store a project profile to load disassembling and profiling
+  * options which are hard to retype every time.
+ 
+  * So that the menu item for building a new project is split into 2 items:
+ 
+    * Build new project.
+   
+    * Build New project from profile.
+
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Tue, 07 Nov 2017 03:43:49 +0100
+
+mk-project (2.1) ; urgency=LOW
+
+  * Separate the documentation generator (currently only sphinx supported) from
+  * the manpage builder which default to the rst2man tool.
+
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Tue, 07 Nov 2017 03:43:49 +0100
+
+mk-project (2.1) ; urgency=LOW
+
+  * Changing the pkg-* targets implementation so that:
+ 
+  * 1. Build an archive using the tar tool instead of build a compress tarball.
+
+  * 2. Add auto incrementing of the ouput format of the archives:
+ 
+    * prgname-version-release.extension (release auto-incrementing).
+
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Tue, 07 Nov 2017 03:43:49 +0100
+
+mk-project (2.1) ; urgency=LOW
+
+  * Set the 4 valgrind target into the targets menu.
+ 
+    * Feel free to edit the template file to add targets as describe into
+    * the documentation.
+
+ -- Brüggemann Eddie <mrcyberfighter@gmail.com>  Tue, 07 Nov 2017 03:43:49 +0100
+

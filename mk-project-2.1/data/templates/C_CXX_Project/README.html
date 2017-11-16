@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>A C/C++ project with mk-project</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">A C/C++ project with mk-project</h1>
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>The <strong>source</strong> are separated from the dependencies (<em>Icons</em>, <em>Configuration files</em>, <em>...</em>)</p>
+<p>Because the dependencies go at distributing into a special folder.</p>
+<pre class="sourceCode make"><code>$(pkgdatadir)</code></pre>
+<p>Expanded to:</p>
+<p><code>/usr/share/project-name</code></p>
+<p><code>/usr/local/share/project-name</code></p>
+<p>According the prefix settings (<code>/usr</code> or <code>/usr/local</code> or anything you want).</p>
+<hr />
+<p>They are and you can create as many as you want in the folder:</p>
+<p><code>./share/project-name</code></p>
+<hr />
+<p>The <strong>source</strong> are separated from the documentation files (<em>info</em>, <em>man</em>, <em>html</em>, ...)...</p>
+<p>Because the doc files go, at distributing, into a special folders:</p>
+<pre class="sourceCode make"><code>$(mandir)
+
+$(infodir)
+
+$(docdir)</code></pre>
+<h1 id="source">Source</h1>
+<p>The <strong>source</strong> are compiled into <strong>object files</strong> and then linked to an executable located at <code>./bin</code> for the sake of a proper compilation.</p>
+<h2 id="headers-files">Headers files</h2>
+<p>Following headers files wil be generated:</p>
+<ul>
+<li><code>./source/headers/defines.h</code></li>
+</ul>
+<p>They are some predefined constant and macros but you can add and remove as many as you want.</p>
+<p>You can include this file where you want.</p>
+<hr />
+<ul>
+<li><code>./source/headers/includes.h</code></li>
+</ul>
+<p>Contains the included headers.</p>
+<p>You can include this file where you want.</p>
+<hr />
+<ul>
+<li><code>./source/global_vars.h</code></li>
+</ul>
+<p>The global variable are proper declared in this file.</p>
+<p>You can include this file where global variables were needed.</p>
+<p>You must declare the global variables with <strong>extern</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">extern</span> <span class="dt">const</span> <span class="dt">char</span> *name ;</code></pre></div>
+<h2 id="source-files">source files</h2>
+<p>Following source file are generated:</p>
+<ul>
+<li><code>./source/main.c</code></li>
+</ul>
+<p>But you can add as many source files as you want (add them to the make <strong>$(SRC_FILES)</strong> variable).</p>
+<hr />
+<ul>
+<li><code>./source/global_vars.c</code></li>
+</ul>
+<p>The global variables are define in this file and this one will be compiled separately.</p>
+<p>You can define as many global variables as you want, the compilation will success.</p>
+<p>You must define the global variables without <strong>extern</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">const</span> <span class="dt">char</span> *name = <span class="st">&quot;mk-project&quot;</span> ;</code></pre></div>
+<h3 id="adding-source-files.">Adding source files.</h3>
+<p>Normally you must make a header file for every <strong>source</strong> (<em>.c</em>) file.</p>
+<p>In the <strong>header</strong> (<em>.h</em>) file you must declare the functions as <strong>extern</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">extern</span> <span class="dt">void</span> print_it(<span class="dt">const</span> <span class="dt">char</span> *string) ;</code></pre></div>
+<p>So you can use the header file everywhere you want.</p>
+<hr />
+<p>And define them without <strong>extern</strong> in the <strong>source</strong> (<em>.c</em>) file.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> print_it(<span class="dt">const</span> <span class="dt">char</span> *string) {
+
+  <span class="co">/** Do work... **/</span>
+
+  <span class="kw">return</span> ;
+
+}</code></pre></div>
+<p>As long as you add the source files path in the <strong>$(SRC_FILES)</strong> variable.</p>
+<p>And the header file path to the <strong>$(HDR_FILES)</strong> variable.</p>
+<p>Everthing will be are right...</p>
+<h1 id="the-prefix-setting.">The prefix setting.</h1>
+<p>When you build a project with <strong>mk-project</strong> you can work on it locally, without installing it.</p>
+<p>But by distributing the project, <strong>mk-project</strong> provide you a simple mechanism based on a prefix definition:</p>
+<h2 id="by-developement">By developement</h2>
+<p>By developement the prefix it is set to: <code>&quot;../&quot;</code> so that you can work locally on your project.</p>
+<h2 id="by-releasing">By releasing</h2>
+<p>By distributing your project you can simply change the prefix so that you have to change nothing else that the location of the files.</p>
+<p>With adding a preprocessor definition onto the compile commandline:</p>
+<pre class="sourceCode make"><code>$(COMPILER) -DPREFIX=&quot;/usr&quot; ...
+
+or
+
+$(COMPILER) -DPREFIX=&quot;/usr/local&quot; ...</code></pre>
+<p>And:</p>
+<p>Simply copy your <strong>mk-project</strong> project local <code>./share</code> folder to <code>/usr/share/</code> or <code>/usr/local/share</code></p>
+<p>and the documentation into the according folder <code>$(mandir)</code>, <code>$(docdir)</code> or <code>${infodir)</code>.</p>
+</body>
+</html>

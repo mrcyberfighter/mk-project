@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mk-project code investigating, debugging and disassembling &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mk-project code formatters" href="mk-project_code_formatting.html" />
+    <link rel="prev" title="mk-project documentation" href="mk-project_documentation.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_code_formatting.html" title="mk-project code formatters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_documentation.html" title="mk-project documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mk-project-code-investigating-debugging-and-disassembling">
+<span id="mk-project-debugging"></span><h1><strong class="program">mk-project</strong> code investigating, debugging and disassembling<a class="headerlink" href="#mk-project-code-investigating-debugging-and-disassembling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>You want to investigate in deep your binary cause of it bugs or simply per curiosity.</p>
+<p><strong class="program">mk-project</strong> provide a lot of targets which will make your investigation easier.</p>
+</div>
+<div class="section" id="the-make-info-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">info</span></code> target<a class="headerlink" href="#the-make-info-target" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">info</span></code> target display simple informations about your program.</p>
+<p>Using the <strong class="program">file</strong>, <strong class="program">size</strong>, <strong class="command">ls -s -h</strong> utilities.</p>
+<div class="section" id="the-file-utility">
+<h3>The <strong class="program">file</strong> utility<a class="headerlink" href="#the-file-utility" title="Permalink to this headline">¶</a></h3>
+<p>The <strong class="program">file</strong> utility print out the details about any file-type.</p>
+<p>So if an executable file is given, the <strong class="program">file</strong> utility will display informations about it.</p>
+</div>
+<div class="section" id="the-size-utility">
+<h3>The <strong class="program">size</strong> utility<a class="headerlink" href="#the-size-utility" title="Permalink to this headline">¶</a></h3>
+<p>The <strong class="program">size</strong> utility print out the byte length of the main binary components:</p>
+<p><code class="docutils literal"><span class="pre">.text</span></code>, <code class="docutils literal"><span class="pre">.data</span></code> and <code class="docutils literal"><span class="pre">.bss</span></code>.</p>
+</div>
+</div>
+<div class="section" id="the-make-gdb-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">gdb</span></code> target<a class="headerlink" href="#the-make-gdb-target" title="Permalink to this headline">¶</a></h2>
+<p>At first you can use the famous <code class="docutils literal"><span class="pre">GNU/Debugger</span></code> <strong class="program">gdb</strong> for investigating your program,</p>
+<p>by simply launching the target <code class="docutils literal"><span class="pre">make</span> <span class="pre">gdb</span></code>.</p>
+<p>This will launch <strong class="program">gdb</strong> in the <strong>./bin</strong> folder where your binary is located</p>
+<p>with your program as argument.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">gdb</strong>:</p>
+<p>For given supplementary options to gdb, which will be passed to <strong class="program">gdb</strong> at every target call, edit the <strong class="makevar">GDB_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">gdb</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">GDB_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make gdb <span class="nv">GDB_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-make-ldd-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">ldd</span></code> target<a class="headerlink" href="#the-make-ldd-target" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="program">ldd</strong> utility show the complete list of dynamic libraries which your program will try to load (i.e. <em>The load time dependencies</em>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">ldd</strong>:</p>
+<p>For given supplementary options to <strong class="program">ldd</strong>, which will be passed to <strong class="program">ldd</strong> at every target call, edit the <strong class="makevar">LDD_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">ldd</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">LDD_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make ldd <span class="nv">LDD_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Limitations of ldd:</p>
+<ul class="simple">
+<li><strong class="program">ldd</strong> cannot identify the libraries dynamically loaded at runtime using <code class="xref py py-func docutils literal"><span class="pre">dlopen()</span></code>.</li>
+</ul>
+<div class="highlight-text"><div class="highlight"><pre><span></span>Be aware, however, that in some circumstances, some version of ldd may attempt to obtain the dependencies informations
+by directly executing the program. Thus, you should never employ ldd on untrusted executables,
+since this may result in the execution of arbitrary code.
+</pre></div>
+</div>
+<p>A safer alternative when dealing with untrusted executables is following:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ objdump -p /path/to/binary <span class="p">|</span> grep NEEDED
+
+<span class="c1"># The same result result can be achieve using the readelf utility.</span>
+
+$ readelf -d /path/to/binary <span class="p">|</span> grep NEEDED
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-make-nm-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">nm</span></code> target<a class="headerlink" href="#the-make-nm-target" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="program">nm</strong> utility is used to list the symbols of a binary or object file(s).</p>
+<p>It can also find the indicated symbol type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">nm</strong>:</p>
+<p>For given supplementary options to <strong class="program">nm</strong>, which will be passed to <strong class="program">nm</strong> at every target call, edit the <strong class="makevar">NM_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">nm</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">NM_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make nm <span class="nv">NM_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">You can give the <strong class="makevar">$(OBJECT)</strong> <strong class="program">make</strong> variable as argument to <strong class="program">nm</strong> instead of the binary.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the binary contains some <strong>C++</strong> code, the symbols are printed by default in mangled form.</p>
+</div>
+<p>Usage examples:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ nm /path/to/prg
+
+<span class="c1"># List all symbols of prg (a binary or object file(s)).</span>
+
+$ nm -D /path/to/prg
+
+<span class="c1"># List only the symbols contains into the dynamic section(s) (exported or visible).</span>
+
+$ nm -C /path/to/prg
+
+<span class="c1"># List symbols in demangled form.</span>
+
+$ nm -D --no-demangle /path/to/prg
+
+<span class="c1"># List symbols in not demangled form.</span>
+
+$ nm -u /path/to/prg
+
+<span class="c1"># List undefined symbols.</span>
+</pre></div>
+</div>
+<p>Look at <a class="reference external" href="http://www.thegeekstuff.com/2012/03/linux-nm-command">The 20 best nm commands</a></p>
+</div>
+<div class="section" id="the-make-objdump-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">objdump</span></code> target<a class="headerlink" href="#the-make-objdump-target" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">objdump</strong> is one of the most versatile utility program, so it can support about 50 others binary formats other than the ELF format.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">objdump</strong>:</p>
+<p>For given supplementary options to <strong class="program">objdump</strong>, which will be passed to <strong class="program">objdump</strong> at every target call, edit the <strong class="makevar">OBJDUMP_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">objdump</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">OBJDUMP_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make objdump <span class="nv">OBJDUMP_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">You can give the <strong class="makevar">$(OBJECT)</strong> <strong class="program">make</strong> variable as argument to <strong class="program">objdump</strong> instead of the binary.</td>
+</tr>
+</tbody>
+</table>
+<p>Usage examples:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ objdump -f /path/to/prg
+
+<span class="c1"># Is used to obtain an insight into the object file(s) header.</span>
+<span class="c1"># The header provide plenty of informations like</span>
+<span class="c1">#</span>
+<span class="c1"># * binary type</span>
+<span class="c1"># * entry point (The start of the .text section)</span>
+<span class="c1"># * etc..</span>
+
+$ objdump -h /path/to/prg
+
+<span class="c1"># Is used to list the available sections from the prg.</span>
+
+$ objdump -T /path/to/prg
+
+<span class="c1"># List dynamic symbols only.</span>
+
+<span class="c1"># Is equivalent to running: $ nm -D /path/to/prg</span>
+
+$ objdump -t /path/to/prg
+
+<span class="c1"># Examines the dynamic section(s).</span>
+
+$ objdump -R /path/to/prg
+
+<span class="c1"># Examines the relocation section(s).</span>
+
+$ objdump -S -j &lt;section name&gt; /path/to/prg
+
+<span class="c1"># Provide the hex-dump of the values carried by the given section.</span>
+
+$ objdump -p /path/to/prg
+
+<span class="c1"># Display informations about the ELF binary segments.</span>
+</pre></div>
+</div>
+<p>Usage example for code disassembling using <strong class="program">objdump</strong>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ objdump -d -M intel /path/to/prg
+
+<span class="c1"># Used to disassemble a binary using the Intel syntax.</span>
+
+$ objdump -d -S -M intel /path/to/prg
+
+<span class="c1"># Like above but interspercing the original source code.</span>
+
+$ objdump -d -M intel -j &lt;section name&gt; /path/to/prg
+
+<span class="c1"># This only works if the binary is compiled with the -g (debugging) option.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-make-strace-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">strace</span></code> target<a class="headerlink" href="#the-make-strace-target" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="program">strace</strong> utility tracks down the <strong>system calls</strong> made by the <strong>process</strong> as well as the <strong>signals</strong> received by the <strong>process</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">strace</strong>:</p>
+<p>For given supplementary options to strace, which will be passed to <strong class="program">strace</strong> at every target call, edit the <strong class="makevar">STRACE_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">strace</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">STRACE_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make strace <span class="nv">STRACE_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-make-ltrace-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">ltrace</span></code> target<a class="headerlink" href="#the-make-ltrace-target" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="program">ltrace</strong> utility tracks down the <strong>libraries calls</strong> made by the <strong>process</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">ltrace</strong>:</p>
+<p>For given supplementary options to ltrace, which will be passed to <strong class="program">ltrace</strong> at every target call, edit the <strong class="makevar">LTRACE_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">ltrace</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">LTRACE_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make ltrace <span class="nv">LTRACE_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="the-make-strip-target">
+<h2>The <code class="docutils literal"><span class="pre">make</span> <span class="pre">strip</span></code> target<a class="headerlink" href="#the-make-strip-target" title="Permalink to this headline">¶</a></h2>
+<p>The <strong class="program">strip</strong> utility can be used to eliminated all the symbols not needed in the process.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Given options to <strong class="program">strip</strong>:</p>
+<p>For given supplementary options to strip, which will be passed to <strong class="program">strip</strong> at every target call, edit the <strong class="makevar">STRIP_OPTS</strong> variable.</p>
+<p>Else if you want to change the options for a unique call of <strong class="program">strip</strong>, by using the target.</p>
+<p>Simply set the wanted options into the <strong class="makevar">STRIP_OPTS</strong> variable on the command line:</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span></span>$ make strip <span class="nv">STRIP_OPTS</span><span class="o">=</span><span class="s2">&quot;--option value&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="oprofile-targets">
+<h2>Oprofile targets<a class="headerlink" href="#oprofile-targets" title="Permalink to this headline">¶</a></h2>
+<p>The program collection Oprofile is a profiling system for systems running Linux 2.6.31 and greater.</p>
+<p>OProfile makes use of the hardware performance  counters  provided  on  Intel,  AMD,  and  other processors.</p>
+<p>OProfile can profile a selected program or process or the whole system.</p>
+<p>OProfile can also  be used to collect cumulative event counts at the application, process, or system level.</p>
+<p>Begin to show at:</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span></span>$ man Oprofile
+
+$ ophelp
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong class="program">ophelp</strong> lists the available performance counter options.</p>
+<p>If you give it a symbolic event name, it will return  the  hardware  value (e.g. &#8220;ophelp DATA_MEM_REFS&#8221;).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body"><strong class="program">mk-project</strong> use the version &gt;= 1.0 of Oprofile.</td>
+</tr>
+</tbody>
+</table>
+<p>And the available Oprofile programs are:</p>
+<ul class="simple">
+<li><strong class="program">operf</strong></li>
+<li><strong class="program">ocount</strong></li>
+<li><strong class="program">opreport</strong></li>
+<li><strong class="program">opannotate</strong></li>
+<li><strong class="program">oparchive</strong></li>
+<li><strong class="program">opgprof</strong></li>
+</ul>
+<p><strong class="program">mk-project</strong> provides wrapper around this programs except <strong class="program">oparchive</strong>.</p>
+<p>Simply remember that operf and <strong class="program">ocount</strong> generate a <code class="docutils literal"><span class="pre">profile_specification</span></code>.</p>
+<p>And the other are done to interpret the datas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">You must run this programs as root.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="valgrind-targets">
+<h2>Valgrind targets<a class="headerlink" href="#valgrind-targets" title="Permalink to this headline">¶</a></h2>
+<p>If valgrind is present on your system <strong class="program">mk-project</strong> provide you 4 targets for the most common usage of valgrind:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make valgrind-memcheck   <span class="c1"># Launch the valgrind memcheck tool on your binary.</span>
+
+make valgrind-cachegrind <span class="c1"># Launch the valgrind cachegrind tool on your binary.</span>
+
+make valgrind-callgrind  <span class="c1"># Launch the valgrind callgrind tool on your binary.</span>
+
+make valgrind-helgrind   <span class="c1"># Launch the valgrind helgrind tool on your binary.</span>
+</pre></div>
+</div>
+<p>For every target you can set at creating the project or changing at reconfiguring your project the wanted options.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Fell free <a class="reference internal" href="mk-project_presentation.html#mk-project-hackme"><span class="std std-ref">to edit the template to set your prefered options in hard coded</span></a>.</p>
+<p class="last">Or set the environment variable <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">$VALGRIND_OPTS</span></code>.</p>
+</div>
+</div>
+<div class="section" id="alternative-to-opts">
+<h2>Alternative to *_OPTS<a class="headerlink" href="#alternative-to-opts" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">You can <strong>export</strong> <strong class="makevar">*_OPTS</strong> the corresponding variable before launching the <strong class="program">make</strong> target.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="documentation-source">
+<h2>Documentation Source<a class="headerlink" href="#documentation-source" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">GNU</span> <span class="pre">Make</span> <span class="pre">manual</span></code> (A very good manual from the GNU manuals serie).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">authors:</th><td class="field-body">Stallman, McGrath, Smith.</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">C/C++</span> <span class="pre">Compiling</span></code> (A very good book about libraries and machine code investigation).</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Milan Stevanovic.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong class="program">mk-project</strong> code investigating, debugging and disassembling</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#the-make-info-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">info</span></code> target</a><ul>
+<li><a class="reference internal" href="#the-file-utility">The <strong class="program">file</strong> utility</a></li>
+<li><a class="reference internal" href="#the-size-utility">The <strong class="program">size</strong> utility</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-make-gdb-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">gdb</span></code> target</a></li>
+<li><a class="reference internal" href="#the-make-ldd-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">ldd</span></code> target</a></li>
+<li><a class="reference internal" href="#the-make-nm-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">nm</span></code> target</a></li>
+<li><a class="reference internal" href="#the-make-objdump-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">objdump</span></code> target</a></li>
+<li><a class="reference internal" href="#the-make-strace-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">strace</span></code> target</a></li>
+<li><a class="reference internal" href="#the-make-ltrace-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">ltrace</span></code> target</a></li>
+<li><a class="reference internal" href="#the-make-strip-target">The <code class="docutils literal"><span class="pre">make</span> <span class="pre">strip</span></code> target</a></li>
+<li><a class="reference internal" href="#oprofile-targets">Oprofile targets</a></li>
+<li><a class="reference internal" href="#valgrind-targets">Valgrind targets</a></li>
+<li><a class="reference internal" href="#alternative-to-opts">Alternative to *_OPTS</a></li>
+<li><a class="reference internal" href="#documentation-source">Documentation Source</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_documentation.html"
+                        title="previous chapter"><strong class="program">mk-project</strong> documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_code_formatting.html"
+                        title="next chapter"><strong>mk-project</strong> code formatters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_debugging.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_code_formatting.html" title="mk-project code formatters"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_documentation.html" title="mk-project documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

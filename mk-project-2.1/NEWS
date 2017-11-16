@@ -1,0 +1,29 @@
+==============
+mk-project 2.1
+==============
+
+  Now you can build a project once with all needed profiling,
+ 
+  debugging, disassembling, code beautifiers options set.
+ 
+  And export this settings so that the next time you don't have
+ 
+  to reset all this options.
+ 
+  ---
+ 
+  The man page generator is separate from the documentation generator.
+ 
+  ---
+ 
+  Using valgrind:
+ 
+  $ make valgrind-memcheck
+ 
+  $ make valgrind-cachegrind
+ 
+  $ make valgrind-callgrind
+ 
+  $ make valgrind-helgrind
+ 
+  

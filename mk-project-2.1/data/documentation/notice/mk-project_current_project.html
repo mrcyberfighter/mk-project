@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Working on an existing mk-project project &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="mk-project documentation" href="mk-project_documentation.html" />
+    <link rel="prev" title="Building a mk-project project" href="mk-project_build_a_project.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_documentation.html" title="mk-project documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_build_a_project.html" title="Building a mk-project project"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="working-on-an-existing-mk-project-project">
+<h1>Working on an existing <strong class="program">mk-project</strong> project<a class="headerlink" href="#working-on-an-existing-mk-project-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="open-an-mk-project-project">
+<h2>Open an <strong class="program">mk-project</strong> project<a class="headerlink" href="#open-an-mk-project-project" title="Permalink to this headline">¶</a></h2>
+<p>For opening an existing project you can make use of the <code class="file docutils literal"><span class="pre">*.mkp</span></code> file from your project.</p>
+<ul>
+<li><p class="first">Either by calling <strong class="program">mk-project</strong> with the <code class="file docutils literal"><span class="pre">*.mkp</span></code> file given as argument:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ mk-project /path/to/project_folder/prgname.mkp
+</pre></div>
+</div>
+<p>Or open the project within <strong class="program">mk-project</strong>&#8216;s <abbr title="Graphical User Interface">G.U.I</abbr> (<span class="menuselection">Projects ‣ Load project</span>).</p>
+</li>
+<li><p class="first">By using your file manager:</p>
+<p>Simply click on the <code class="file docutils literal"><span class="pre">*.mkp</span></code> file in the project folder</p>
+<p><strong>or</strong></p>
+<p>Opening the <code class="file docutils literal"><span class="pre">*.mkp</span></code> file with your file manager using the <code class="docutils literal"><span class="pre">open</span> <span class="pre">with</span></code> option.</p>
+<p>To open the <strong class="program">mk-project</strong> <abbr title="Graphical User Interface">G.U.I</abbr> and loading the entire project.</p>
+</li>
+<li><p class="first">Using the <strong class="program">mk-project</strong> <abbr title="Graphical User Interface">G.U.I</abbr>:</p>
+<p>Use the menu item <span class="menuselection">Projects ‣ Load project</span> and choose the <code class="file docutils literal"><span class="pre">*.mkp</span></code> of interest.</p>
+<p>To load the entire project in the <strong class="program">mk-project</strong> <abbr title="Graphical User Interface">G.U.I</abbr></p>
+</li>
+</ul>
+<p>All targets will be available according to your settings.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Else you can simply use a terminal to use the <strong class="program">mk-project</strong> projects:</p>
+<p class="last">simply type <code class="docutils literal"><span class="pre">make</span> <span class="pre">help</span></code> in the project folder to sea the available targets.</p>
+</div>
+</div>
+<div class="section" id="reconfiguring-an-existing-project">
+<h2>Reconfiguring an existing project<a class="headerlink" href="#reconfiguring-an-existing-project" title="Permalink to this headline">¶</a></h2>
+<p>Open the <strong class="program">mk-project</strong> <abbr title="Graphical User Interface">G.U.I</abbr> and use the menu item <span class="menuselection">Projects -&gt; Reconfigure project</span></p>
+<p>to open the project reconfiguring project interface.</p>
+<p>Here you can:</p>
+<ul class="simple">
+<li><strong>Change</strong> some settings of your project.</li>
+<li><strong>Enable</strong> or <strong>disable</strong> some features.</li>
+<li><strong>Edit</strong> the Licensing boilerplate to prepend it to all source and header files if you want to do so.</li>
+<li><strong>Edit</strong> the desktop file boilerplate.</li>
+</ul>
+</div>
+<div class="section" id="adding-files-to-your-project">
+<h2>Adding files to your project<a class="headerlink" href="#adding-files-to-your-project" title="Permalink to this headline">¶</a></h2>
+<p>Open an existing project and then use the menu item <span class="menuselection">Projects -&gt; Add file(s) to project</span>.</p>
+<p>Then select the file(s) you want to add to your project.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Take care of the checkbutton in the file chooser !</p>
+<ul class="last simple">
+<li>You can choose to add the corresponding <em>header</em> file to your project.<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">If the header file doesn&#8217;t exist it will be create.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>The file(s) must be in the <code class="docutils literal"><span class="pre">./src</span></code> folder or subfolders from it !</p>
+<p>Take care to organize your project properly so that all source files still in the <code class="docutils literal"><span class="pre">./src</span></code> folder from your project !</p>
+<p>Else you can add the file(s) to your project anyway but this can break your project tree if you rename the project folder.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">It&#8217;s better to create sub-folders from the <code class="docutils literal"><span class="pre">./src</span></code> folder to organize your project properly !</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Working on an existing <strong class="program">mk-project</strong> project</a><ul>
+<li><a class="reference internal" href="#open-an-mk-project-project">Open an <strong class="program">mk-project</strong> project</a></li>
+<li><a class="reference internal" href="#reconfiguring-an-existing-project">Reconfiguring an existing project</a></li>
+<li><a class="reference internal" href="#adding-files-to-your-project">Adding files to your project</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_build_a_project.html"
+                        title="previous chapter">Building a <strong class="program">mk-project</strong> project</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_documentation.html"
+                        title="next chapter"><strong class="program">mk-project</strong> documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_current_project.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_documentation.html" title="mk-project documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_build_a_project.html" title="Building a mk-project project"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

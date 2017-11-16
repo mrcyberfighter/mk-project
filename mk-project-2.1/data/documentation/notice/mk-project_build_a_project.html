@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Building a mk-project project &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Working on an existing mk-project project" href="mk-project_current_project.html" />
+    <link rel="prev" title="mk-project" href="mk-project_presentation.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_current_project.html" title="Working on an existing mk-project project"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_presentation.html" title="mk-project"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="building-a-mk-project-project">
+<h1>Building a <strong class="program">mk-project</strong> project<a class="headerlink" href="#building-a-mk-project-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="starting">
+<h2>Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h2>
+<p>At first some basic informations will be required:</p>
+<ul>
+<li><p class="first">The programming language from the project.</p>
+<ul class="simple">
+<li><strong>C</strong></li>
+</ul>
+<p>Or</p>
+<ul class="simple">
+<li><strong>C++</strong></li>
+</ul>
+</li>
+<li><p class="first">The project name which will become the program name</p>
+<p>the binary name.</p>
+</li>
+<li><p class="first">The <strong>program version</strong> which, if empty will be arbitrary set to the value <code class="docutils literal"><span class="pre">0.0</span></code>.</p>
+</li>
+<li><p class="first">The folder where to generate the project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">The folder must be empty (Advice: create it with the folder-chooser at the same time as the project).</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">The license of your project.</p>
+<ul class="simple">
+<li>GPL</li>
+<li>AGPL</li>
+<li>LGPL</li>
+<li>FDL</li>
+<li>Apache 2.0 License</li>
+<li>Clear BSD</li>
+<li>Free BSD</li>
+<li>Other</li>
+</ul>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">The license files will be copied into the project folder according to your choice of format(s).</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>docbook</li>
+<li>epub</li>
+<li>pdf</li>
+<li>latex</li>
+<li>html</li>
+<li>texinfo</li>
+<li>text</li>
+</ul>
+</div>
+<div class="section" id="c-c-compiler-settings">
+<h2><strong>C</strong>/<strong>C++</strong> Compiler settings<a class="headerlink" href="#c-c-compiler-settings" title="Permalink to this headline">¶</a></h2>
+<p>For every entry except the &#8220;Compiler entry&#8221; you get an aside button which</p>
+<p>will permit you to add the <em>most common settings</em> <strong>easily</strong>.</p>
+<ul>
+<li><p class="first"><strong>Compiler:</strong></p>
+<p>You can choose a compiler to use, which default to <code class="docutils literal"><span class="pre">cc</span></code> for a <strong>C</strong> project and <code class="docutils literal"><span class="pre">c++</span></code> for <strong>C++</strong>.</p>
+<p>But you can set clang per example or the compiler you want.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">The exactness of your entry will be checked by compiling a minimal program.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first"><strong>Warnings:</strong></p>
+<p>You can set the warnings to use.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The aside button will permit you to insert as warnings the following most common warnings settings:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">-Wall</span></code> (<em>All warning: sea the documentation of your compiler to see which are enabled</em>).</li>
+<li><code class="docutils literal"><span class="pre">-Wextra</span></code> (<em>Extra warning: sea the documentation of your compiler to see which are enabled</em>).</li>
+<li><code class="docutils literal"><span class="pre">-Wpedantic</span></code> (<em>ISO conform: most extension are permitted. sea the documentation of your compiler to see which are enabled</em>).</li>
+<li><code class="docutils literal"><span class="pre">-w</span></code> (<em>No output warnings</em>).</li>
+<li><code class="docutils literal"><span class="pre">-Werror</span></code> (<em>A warning is consider as an error</em>).</li>
+</ul>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">The field is empty per default.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first"><strong>CFLAGS:</strong></p>
+<p>You can set the argument to give to the compiler (like -g, -O2,...).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The aside button provide few flags adding:</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">-g</span></code></li>
+<li><code class="docutils literal"><span class="pre">-O[0123gsf]</span></code></li>
+<li><code class="docutils literal"><span class="pre">-std=</span></code></li>
+<li><code class="docutils literal"><span class="pre">-pedantic</span></code></li>
+</ul>
+</div>
+</li>
+<li><p class="first"><strong>CPPFLAGS:</strong></p>
+<p>Preprocessor instruction to pass onto the compile command line.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The aside button permit you to define a definition with a value or without.</p>
+</div>
+</li>
+<li><p class="first"><strong>LDFLAGS:</strong></p>
+<p>Dynamic Linker Flags.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The aside button will permit you to choose the <strong class="program">pkg-config</strong></p>
+<p>you want to add to your project.</p>
+<p class="last">By listing all the <strong class="program">pkg-config</strong> available on your system.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">By hand editing, if you use <strong class="program">pkg-config</strong>, use the back-ticks syntax:</td>
+</tr>
+</tbody>
+</table>
+<p>Else this will not work because of the make syntax.</p>
+</li>
+<li><p class="first"><strong>LDLIBS:</strong></p>
+<p>Dynamic Linker library libraries: per example <code class="docutils literal"><span class="pre">-lm</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The aside button will permit you to add the linker of your choice.</p>
+<p class="last">By listing all linker flags available on your system.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>Here you must set the extension you will use for the source and header files.</p>
+<p>Especially for the <strong>C++</strong> language:</p>
+<ul>
+<li><p class="first">Source files:</p>
+<ul class="simple">
+<li><em>.cpp</em></li>
+<li><em>.CPP</em></li>
+<li><em>.c++</em></li>
+<li><em>.C</em></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body"><strong>This is very important</strong> because of the compilation automation which will <strong>not work</strong> with the <strong>wrong extension</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Header files:</p>
+<ul class="simple">
+<li><em>.h</em></li>
+<li><em>.hh</em></li>
+<li><em>.H</em></li>
+<li><em>.hp</em></li>
+<li><em>.hxx</em></li>
+<li><em>.hpp</em></li>
+<li><em>.HPP</em></li>
+<li><em>.h++</em></li>
+<li><em>.tcc</em></li>
+</ul>
+</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">For the <strong>C</strong> language this default to <em>.c</em> and <em>.h</em>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="disassembling">
+<h2>Disassembling<a class="headerlink" href="#disassembling" title="Permalink to this headline">¶</a></h2>
+<p>Here you can give the default options to pass to the debugging tools:</p>
+<ul class="simple">
+<li><strong class="program">nm</strong> options.</li>
+<li><strong class="program">gdb</strong> options.</li>
+<li><strong class="program">strace</strong> options.</li>
+<li><strong class="program">ltrace</strong> options.</li>
+<li><strong class="program">objdump</strong> options.</li>
+<li><strong class="program">ldd</strong> options.</li>
+<li><strong class="program">gprof</strong> options.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">For further informations sea the <a class="reference internal" href="mk-project_debugging.html#mk-project-debugging"><span class="std std-ref">mk-project code investigating, debugging and disassembling page</span></a>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="profiling">
+<h2>Profiling<a class="headerlink" href="#profiling" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="oprofile">
+<h3><strong class="program">Oprofile</strong><a class="headerlink" href="#oprofile" title="Permalink to this headline">¶</a></h3>
+<p><strong class="program">mk-project</strong> use <strong>Oprofile</strong> version &gt;= 1.0 for profiling you code.</p>
+<p>You can set the following default options:</p>
+<ul class="simple">
+<li><strong class="program">operf</strong> options.</li>
+<li><strong class="program">ocount</strong> options.</li>
+<li><strong class="program">opreport</strong> options.</li>
+<li><strong class="program">opannotate</strong> options.</li>
+<li><strong class="program">opgprof</strong> options.</li>
+</ul>
+</div>
+<div class="section" id="valgrind">
+<h3><strong class="program">Valgrind</strong><a class="headerlink" href="#valgrind" title="Permalink to this headline">¶</a></h3>
+<p><strong class="program">mk-project</strong> provides 4 <strong class="program">valgrind</strong> targets per default:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>make valgrind-memcheck   <span class="c1"># Launch the valgrind memcheck tool on your binary.</span>
+
+make valgrind-cachegrind <span class="c1"># Launch the valgrind cachegrind tool on your binary.</span>
+
+make valgrind-callgrind  <span class="c1"># Launch the valgrind callgrind tool on your binary.</span>
+
+make valgrind-helgrind   <span class="c1"># Launch the valgrind helgrind tool on your binary.</span>
+</pre></div>
+</div>
+<p>For this <strong class="program">valgrind</strong> targets you can set the options.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">You can define more <strong class="program">valgrind</strong> targets by <a class="reference internal" href="mk-project_presentation.html#mk-project-hackme"><span class="std std-ref">editing the template</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<p>You can give options to apply to valgrind by setting the environment variable <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">VALGRIND_OPTS</span></code>.</p>
+<p><strong>Or</strong> by passing it like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ make valgrind-memcheck <span class="nv">VALGRIND_MEMCHECK_OPTS</span><span class="o">=</span>--option<span class="o">=</span>value
+
+$ make valgrind-cachegrind <span class="nv">VALGRIND_CACHEGRIND_OPTS</span><span class="o">=</span>--option<span class="o">=</span>value
+
+$ make valgrind-callgrind <span class="nv">VALGRIND_CALLGRIND_OPTS</span><span class="o">=</span>--option<span class="o">=</span>value
+
+$ make valgrind-helgrind <span class="nv">VALGRIND_HELGRIND_OPTS</span><span class="o">=</span>--option<span class="o">=</span>value
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="c-c-code-formatters">
+<h2><strong>C</strong>/<strong>C++</strong> code formatters<a class="headerlink" href="#c-c-code-formatters" title="Permalink to this headline">¶</a></h2>
+<p>Here you can choose the code formatter(s) you want to use.</p>
+<ul class="simple">
+<li>You can set the options to give to <strong class="program">indent</strong> and to <strong class="program">astyle</strong> for the <code class="docutils literal"><span class="pre">indent-user</span></code> and <code class="docutils literal"><span class="pre">astyle-user</span></code> target if you know this tools.<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">But <strong class="program">mk-project</strong> provides a lot of pre-configurated <strong class="program">astyle</strong>, <strong class="program">indent</strong>, <strong class="program">bcpp</strong> targets.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li>You can set the <code class="docutils literal"><span class="pre">indentation</span> <span class="pre">width</span></code> to use and wether to use tabulation or not during the formatting process.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">For further information sea the page: <a class="reference internal" href="mk-project_code_formatting.html#code-formatters"><span class="std std-ref">mk-project code formatters</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Simply choose to use <a class="reference internal" href="mk-project_documentation.html#mk-project-documentation"><span class="std std-ref">sphinx or not</span></a>.</li>
+<li>Set the options according to your sphinx version.</li>
+<li><em>Enable</em>/<em>Disable</em> the wanted sphinx extensions.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">sphinx:</th><td class="field-body">This will generate a <code class="docutils literal"><span class="pre">Makefile</span></code> and <strong class="program">sphinx</strong> specific targets.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="man-page">
+<h3>man-page<a class="headerlink" href="#man-page" title="Permalink to this headline">¶</a></h3>
+<p>The man page generating is separated from the documentation because they normally</p>
+<p>does not contains the same,</p>
+<p>so <strong class="program">mk-project</strong> provides through the <strong class="program">rst2man</strong> tool an option</p>
+<p>to build (using the <abbr title="ReStructured Text">ReST</abbr> syntax) and view a man page.</p>
+</div>
+</div>
+<div class="section" id="about-informations">
+<h2>About informations<a class="headerlink" href="#about-informations" title="Permalink to this headline">¶</a></h2>
+<p>Here you can set some informations about your program.</p>
+<ul class="simple">
+<li>Author(s).</li>
+<li>Mail address.</li>
+<li>Program URL.</li>
+<li>Copyright string.</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">All this informations will generate some constant definition into the <code class="docutils literal"><span class="pre">./headers/defines.${EXT_HDR}</span></code> file.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="others-informations">
+<h2>Others Informations<a class="headerlink" href="#others-informations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Make options: the options to pass to <strong class="program">make</strong> at every call.</li>
+<li>The bash location (auto-detect).</li>
+<li>Compression level for the <code class="docutils literal"><span class="pre">pkg-\*</span></code> targets, with which you can build an archive from your project.</li>
+</ul>
+</div>
+<div class="section" id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+<p>You can edit a source code files header according to the chosen license.</p>
+<p>And add it to every source file with the target:</p>
+<p><strong class="makevar">make prepend-license</strong>.</p>
+</div>
+<div class="section" id="desktop-file">
+<h2>*.desktop file<a class="headerlink" href="#desktop-file" title="Permalink to this headline">¶</a></h2>
+<p>You can build a desktop file with this boilerplate.</p>
+</div>
+<div class="section" id="archiving-your-project">
+<h2>Archiving your project<a class="headerlink" href="#archiving-your-project" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">mk-project</strong> provides many compressed archiving targets:</p>
+<ul class="simple">
+<li><strong class="program">zip</strong> archive.</li>
+<li><strong class="program">tar</strong> archive compressed with <strong class="program">lzma</strong>, <strong class="program">xz</strong>, <strong class="program">gz</strong>, <strong class="program">bz</strong>.</li>
+<li><strong class="program">rar</strong> archive.</li>
+</ul>
+<p>If the wanted archive program is installed at your site. What is not oblige.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body"><strong class="program">mk-project</strong> provides through his <abbr title="Graphical User Interface">G.U.I</abbr> a: <span class="guilabel">Project &#8211;&gt; extract and load</span> menu item.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Last step to complete the generation of your project.</p>
+<p>Enjoy the easiness of working with <strong class="program">mk-project</strong> the <abbr>T.D.E Terminal Development Environment</abbr>.</p>
+<div class="section" id="exporting-your-settings">
+<h3>Exporting your settings<a class="headerlink" href="#exporting-your-settings" title="Permalink to this headline">¶</a></h3>
+<p>You can exporting your settings as a <strong class="program">mk-project</strong> profile.</p>
+<p>To load it by the next project because typing all this options can be painful.</p>
+<p>You will get the most wanted settings setted like <code class="docutils literal"><span class="pre">nm_options</span></code> per example,</p>
+<p>but not all like the program name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">The file extension will arbitrary set to <code class="docutils literal"><span class="pre">*.mkpp</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Building a <strong class="program">mk-project</strong> project</a><ul>
+<li><a class="reference internal" href="#starting">Starting</a></li>
+<li><a class="reference internal" href="#c-c-compiler-settings"><strong>C</strong>/<strong>C++</strong> Compiler settings</a></li>
+<li><a class="reference internal" href="#files">Files</a></li>
+<li><a class="reference internal" href="#disassembling">Disassembling</a></li>
+<li><a class="reference internal" href="#profiling">Profiling</a><ul>
+<li><a class="reference internal" href="#oprofile"><strong class="program">Oprofile</strong></a></li>
+<li><a class="reference internal" href="#valgrind"><strong class="program">Valgrind</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#c-c-code-formatters"><strong>C</strong>/<strong>C++</strong> code formatters</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li><a class="reference internal" href="#man-page">man-page</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#about-informations">About informations</a></li>
+<li><a class="reference internal" href="#others-informations">Others Informations</a></li>
+<li><a class="reference internal" href="#licensing">Licensing</a></li>
+<li><a class="reference internal" href="#desktop-file">*.desktop file</a></li>
+<li><a class="reference internal" href="#archiving-your-project">Archiving your project</a></li>
+<li><a class="reference internal" href="#summary">Summary</a><ul>
+<li><a class="reference internal" href="#exporting-your-settings">Exporting your settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mk-project_presentation.html"
+                        title="previous chapter"><strong class="program">mk-project</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_current_project.html"
+                        title="next chapter">Working on an existing <strong class="program">mk-project</strong> project</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_build_a_project.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_current_project.html" title="Working on an existing mk-project project"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mk-project_presentation.html" title="mk-project"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>

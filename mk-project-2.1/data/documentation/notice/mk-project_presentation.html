@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>mk-project &#8212; mk-project 2.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Building a mk-project project" href="mk-project_build_a_project.html" />
+    <link rel="prev" title="Welcome to mk-project’s documentation!" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mk-project_build_a_project.html" title="Building a mk-project project"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to mk-project’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mk-project">
+<h1><strong class="program">mk-project</strong><a class="headerlink" href="#mk-project" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">author:</th><td class="field-body">Brüggemann Eddie &lt;<a class="reference external" href="mailto:mrcyberfighter&#37;&#52;&#48;gmail&#46;com">mrcyberfighter<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">program:</th><td class="field-body">mk-project</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">version:</th><td class="field-body">2.1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">language:</th><td class="field-body">C</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">release:</th><td class="field-body">Nov 15, 2017</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="presentation">
+<h2>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">mk-project</strong> is a <strong>C</strong> and <strong>C++</strong> project builder, with a nice <abbr title="Graphical User Interface">G.U.I</abbr>, which generate at first a big, big do it all, <code class="docutils literal"><span class="pre">Makefile</span></code>.</p>
+<p>So that you can create a project and keep the tree of your project, which reflect the UNIX file system tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body"><strong class="program">mk-project</strong> does not claim to replace the auto-tools but it is build on the top in the spirit of development instead of distributing.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>In addition <strong class="program">vim</strong> or others <abbr title="Terminal User Interface">T.U.I</abbr> editors users,</p>
+<p>can use the entire program by editing their source files into the <span class="menuselection">Terminals ‣ Edit terminal</span> which is a notebook, you can adding as many terminals you want.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Else <strong class="program">mk-project</strong> is a tool done to <em>ease the development process</em> of <strong>C</strong> or <strong>C++</strong> programs and a good bridge for the distributing process. Especially with the <strong>autotools</strong>.</p>
+<p><strong class="program">mk-project</strong> is a <abbr title="Terminal Development Environment">T.D.E</abbr> (<strong>T</strong>erminal <strong>D</strong>evelopement <strong>E</strong>nvironment):</p>
+<blockquote>
+<div>an <strong>utility</strong> used for the <strong>development</strong> of <strong>programs</strong> with many functionalities !</div></blockquote>
+<p><strong class="program">mk-project</strong> is based on the <strong class="program">make</strong> tool which on his turn, use severals utilities, for providing many features</p>
+<p>and so many useful <strong class="program">make</strong> targets.</p>
+<p>Callable through a terminal, in preference (or through the <abbr title="Graphical User Interface">G.U.I</abbr> from <strong class="program">mk-project</strong>: <span class="menuselection">targets ‣ *</span>).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong class="program">mk-project</strong> is an <code class="docutils literal"><span class="pre">Environment</span></code> in the terms of his wide field of <code class="docutils literal"><span class="pre">targets</span></code> which aren&#8217;t statically at all.</p>
+<p>But <strong>dynamically</strong> <em>configurable</em>, <em>changeable</em> and <em>self-build-able</em> and so that the grass becomes greener...</p>
+<p>The <code class="docutils literal"><span class="pre">targets</span></code> are short string easy to remember and so you can make work</p>
+<ul class="simple">
+<li>your computer, through the terminals</li>
+<li>and mostly your head through <strong>remembering</strong>, <strong>configuring</strong>, <strong>modifying</strong> and <strong>creating</strong> <code class="docutils literal"><span class="pre">targets</span></code>.</li>
+</ul>
+<p>And not become an <abbr>I.D.E</abbr> (<strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment)  <strong>zombie</strong> thrashing his head and knows !</p>
+<p>But a proud well informed programmer which knows exactly how his system and environment works which can easily automate the task using the <strong class="program">make</strong> syntax.</p>
+</div>
+<div class="section" id="hackme">
+<span id="mk-project-hackme"></span><h2>Hackme<a class="headerlink" href="#hackme" title="Permalink to this headline">¶</a></h2>
+<p>You can <strong>edit</strong> the <code class="docutils literal"><span class="pre">Makefile</span></code> by hand at your convenience, of course <strong>!</strong></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>But I think It&#8217;s better for some <a class="reference internal" href="#set-make-help"><span class="std std-ref">generic targets to include</span></a> them directly</p>
+<p>into the template file(s) you will find at <strong class="makevar">$(pkgdatadir)</strong>: <code class="file docutils literal"><span class="pre">/usr(/local/share/mk-project/templates/*</span></code></p>
+<p>So that you get it every time you generate a new project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">If you do this: you must take care of escaping the &#8216;%&#8217; with a &#8216;%&#8217; character : &#8220;%%&#8221;.</td>
+</tr>
+</tbody>
+</table>
+<p>But think to notify the <a class="reference internal" href="#developers-contributors"><span class="std std-ref">developers</span></a>,</p>
+<p class="last">to inform them about your add-on(s) if you think it&#8217;s reliable and usable for others.</p>
+</div>
+</div>
+<div class="section" id="what-provide-mk-project">
+<h2>What provide <strong class="program">mk-project</strong><a class="headerlink" href="#what-provide-mk-project" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>At the time i write this documentation <strong class="program">mk-project</strong> support:</p>
+<p>the <strong>C</strong> and <strong>C++</strong> programming language.</p>
+<p><em>&#8220;I invite all the community to work together to take in charge more languages...&#8221;</em></p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">file:</th><td class="field-body"><a class="reference internal" href="mk-project_participating.html#mk-project-participating"><span class="std std-ref">see this document for participating (You can become from the simple contributor to the entire coauthor).</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p class="first"><strong class="program">mk-project</strong> provide at first a solid base for building a work,</p>
+<p>through a big Makefile, which can be edited manually in respect of the following few conventions:</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last">
+<li><p class="first">Configuration settings are set through the string:</p>
+<ul class="simple">
+<li><strong>F</strong> For false (disable option).</li>
+<li><strong>T</strong> for true (enable option).</li>
+</ul>
+</li>
+<li><p class="first">Some few others variables:</p>
+<p>The variable <strong class="makevar">$(SRC_FILES)</strong> is build from the variable <strong class="makevar">$(SRC_DIR)</strong> which value is always: <code class="docutils literal"><span class="pre">./src</span></code>.</p>
+<blockquote>
+<div><p>This mean if you want to add files manually (<em>if you doesn&#8217;t use the GUI for this task</em>) to your Makefile,</p>
+<p>do it properly by using the <strong class="makevar">$(SRC_DIR)</strong> variable:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nv">SRC_DIR</span>   <span class="o">=</span> ./src
+
+<span class="nv">SRC_FILES</span> <span class="o">=</span> <span class="si">${</span><span class="nv">SRC_DIR</span><span class="si">}</span>/my_file<span class="si">${</span><span class="nv">EXT_SRC</span><span class="si">}</span> <span class="se">\</span>
+            <span class="si">${</span><span class="nv">SRC_DIR</span><span class="si">}</span>/subfolder/my_file<span class="si">${</span><span class="nv">EXT_SRC</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>So you will add file(s) relative to the <code class="docutils literal"><span class="pre">./src</span></code> directory where source file(s) have to reside.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Otherwise simply use the <abbr title="Graphical User Interface">G.U.I</abbr> for adding file(s) <span class="menuselection">Project -&gt; Add file(s) to project</span>.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<ul>
+<li><p class="first">A building system for your source files.</p>
+</li>
+<li><p class="first">Many tools for machine code investigation:</p>
+<p>From the simple <strong>-g</strong> option setting by a <code class="docutils literal"><span class="pre">GNU-Compiler</span></code> for debbuging with <code class="docutils literal"><span class="pre">gdb</span></code>, through <strong>disassemble</strong> the <em>machine code</em> files and <em>executable tracing</em>, to <strong>profiling</strong> the entire work.</p>
+</li>
+<li><p class="first">For the documentation <strong class="program">mk-project</strong> support <a class="reference internal" href="mk-project_documentation.html#mk-project-documentation"><span class="std std-ref">the sphinx documentation generator</span></a>.</p>
+<p>The <strong class="program">sphinx</strong> documentation <code class="docutils literal"><span class="pre">targets</span></code> support many output formats:</p>
+<ul class="simple">
+<li><strong>info</strong> files.</li>
+<li><strong>man</strong> (manual pages).</li>
+<li><strong>HTML</strong>, single <strong>HTML</strong>, and <strong>texi HTML</strong> documentation.</li>
+<li><strong>PDF</strong> and <strong>LATEXPDF</strong> files.</li>
+<li><strong>XML</strong> files.</li>
+<li><strong>LATEX</strong> files.</li>
+<li><strong>EPUB</strong> files.</li>
+</ul>
+<p><strong>And many more</strong> through <strong class="program">sphinx</strong> like: <strong>qthelp</strong>, <strong>applehelp</strong>, <strong>xml</strong>, <strong>json</strong> or <strong>devhelp</strong> per example.</p>
+</li>
+</ul>
+<p><strong class="program">mk-project</strong> provide a simple <abbr title="Graphical User Interface">G.U.I</abbr> composing of terminals and a menu-bar.</p>
+<p>At first you can use the menu items to perform some actions like:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Generate a new project: <span class="menuselection">Project -&gt; New Project</span>.</p>
+<p>Then you have to configure your project answering some basics questions like:</p>
+<ul class="simple">
+<li>Programming language.</li>
+<li>Program name</li>
+<li>Project folder (in which the new project will be generate).</li>
+</ul>
+<p>And some others according to your settings.</p>
+</li>
+</ul>
+<p>Once the new project is generated you can access to the make targets either through the <strong class="program">mk-project</strong> <abbr title="Graphical User Interface">G.U.I</abbr> menu-bar (<em>simple click on the wanted target to execute it !</em>).</p>
+<p>Or from the terminal of <strong class="program">mk-project</strong> or any else terminal at the condition to be in the <code class="file docutils literal"><span class="pre">Makefile</span></code> current folder.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">Simply type <strong class="command">$ make help</strong> to get the list of available targets.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<blockquote id="set-make-help">
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>If you add some user-targets, to the <code class="file docutils literal"><span class="pre">Makefile(s)</span></code>, think at adding them to the <strong class="command">$ make help</strong> output.</p>
+<p>So that mk-project can auto-detect your target and list it to add it as menu item to the make targets.</p>
+<p>If you add a bash comment on the same line it will be displayed as tool-tip by overfly the menu items.</p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">warning:</th><td class="field-body">Simply think to limit your entry at terminal maximal size: 79 characters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></blockquote>
+<p>So <strong class="program">mk-project</strong> provide another terminals ordered in tabs which you can add, remove, and configuring.</p>
+<p>For purpose of terminals editor users like <strong class="program">vi</strong>, <strong class="program">ed</strong>, <strong class="program">emacs</strong> which can be easily launch an instance their favorite <code class="docutils literal"><span class="pre">terminal</span> <span class="pre">editor</span></code> in every tab all that continuing using the <strong class="program">mk-project</strong> <em>interface</em>.</p>
+<p>Finally you can switch between the single <span class="menuselection">terminals -&gt; make terminal</span>   (which should stay in the <code class="file docutils literal"><span class="pre">Makefile</span></code> current folder) and the <span class="menuselection">terminals -&gt; edit terminals</span> terminals using the menu radio items.</p>
+</div>
+<div class="section" id="how-mk-project-works">
+<h2>How <strong class="program">mk-project</strong> works<a class="headerlink" href="#how-mk-project-works" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">The answers is simply <code class="docutils literal"><span class="pre">all</span> <span class="pre">is</span> <span class="pre">make</span> <span class="pre">in</span> <span class="pre">Makefiles</span></code>, which will make you <em>the development easier</em>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong class="program">mk-project</strong> doesn&#8217;t claim to replace an <strong>IDE</strong> or others <strong>building tools</strong> but only give you an alternative</p>
+<p>which <code class="docutils literal"><span class="pre">you</span> <span class="pre">can</span> <span class="pre">entirely</span> <span class="pre">adapt</span></code> to your requirement.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For being <strong>true</strong> the <strong class="program">make</strong> tool implementation and the way it make you the life easier</p>
+<p>without forgetting your <code class="docutils literal"><span class="pre">TTY</span> <span class="pre">Knows</span></code> has impress me so that</p>
+<p>I couldn&#8217;t develop a good project without it</p>
+<p>or in others words:</p>
+<div class="last highlight-text"><div class="highlight"><pre><span></span>If the make tool have never exist I would invent it...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="author-s">
+<span id="developers-contributors"></span><h2>Author(s)<a class="headerlink" href="#author-s" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Developer:</th><td class="field-body"><a class="reference external" href="mailto:mrcyberfighter&#37;&#52;&#48;gmail">Brüggemann Eddie</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Documenter:</th><td class="field-body"><a class="reference external" href="mailto:mrcyberfighter&#37;&#52;&#48;gmail">Brüggemann Eddie</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="contributor-s">
+<h2>Contributor(s)<a class="headerlink" href="#contributor-s" title="Permalink to this headline">¶</a></h2>
+<p><strong>Become one !!!</strong></p>
+</div>
+<div class="section" id="the-future-of-mk-project">
+<span id="futur-of-mk-project"></span><h2>The future of <strong class="program">mk-project</strong><a class="headerlink" href="#the-future-of-mk-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mk-project-mic-on">
+<h3><strong class="program">mk-project</strong>: <code class="docutils literal"><span class="pre">mic-on</span></code> !!!<a class="headerlink" href="#mk-project-mic-on" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The idea is to sit in front of the interface of <strong class="program">mk-project</strong> (<code class="docutils literal"><span class="pre">microphone</span> <span class="pre">on</span></code> <strong>!</strong>),</p>
+<p>writing the <em>source code</em> from your last creation:</p>
+<p>And to say <code class="docutils literal"><span class="pre">execute:</span> <span class="pre">make</span> <span class="pre">exec</span></code>, or the target you want...</p>
+<p>The <strong>program</strong> could <strong>react</strong> by <em>analyzing your voice entry</em> and <strong>executing the target</strong> !!!</p>
+<p>So that the build is <strong>automate</strong> by (<em>simple</em>) <strong>voice recognition</strong>.</p>
+<p>So you can write your <strong>program</strong> with your hands</p>
+<blockquote>
+<div>and</div></blockquote>
+<p><strong>build it</strong> with by emitting a <em>simple order</em> so that the <em>program execute the corresponding target</em>,</p>
+<p>if recognize...</p>
+<p><strong>What do you think about it ?</strong></p>
+<table class="last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">note:</th><td class="field-body">We could enhance <strong class="program">mk-project</strong> in the way of Speech recognition...</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/mk-project_icon.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong class="program">mk-project</strong></a><ul>
+<li><a class="reference internal" href="#presentation">Presentation</a></li>
+<li><a class="reference internal" href="#hackme">Hackme</a></li>
+<li><a class="reference internal" href="#what-provide-mk-project">What provide <strong class="program">mk-project</strong></a></li>
+<li><a class="reference internal" href="#how-mk-project-works">How <strong class="program">mk-project</strong> works</a></li>
+<li><a class="reference internal" href="#author-s">Author(s)</a></li>
+<li><a class="reference internal" href="#contributor-s">Contributor(s)</a></li>
+<li><a class="reference internal" href="#the-future-of-mk-project">The future of <strong class="program">mk-project</strong></a><ul>
+<li><a class="reference internal" href="#mk-project-mic-on"><strong class="program">mk-project</strong>: <code class="docutils literal"><span class="pre">mic-on</span></code> !!!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to mk-project&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mk-project_build_a_project.html"
+                        title="next chapter">Building a <strong class="program">mk-project</strong> project</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/mk-project_presentation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mk-project_build_a_project.html" title="Building a mk-project project"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to mk-project’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mk-project 2.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Brüggemann Eddie.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
+  </body>
+</html>
